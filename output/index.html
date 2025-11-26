@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MWI Market Data</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+    <style>
+        /* --- CSS Variables for Theming --- */
+        :root {
+            --bg-color: #f6f8fa; --card-bg-color: #ffffff; --text-color-primary: #24292f;
+            --text-color-secondary: #57606a; --muted-text-color: #57606a; --border-color: #d0d7de;
+            --accent-color: #0969da; --positive-color: #1a7f37; --negative-color: #cf222e; --warning-color: #d29922;
+            --button-bg-color: #f6f8fa; --button-hover-bg-color: #f0f2f4; --button-border-color: rgba(27, 31, 36, 0.15);
+            --button-active-bg-color: var(--accent-color); --button-active-text-color: #ffffff; --button-active-border-color: var(--accent-color);
+            --input-bg-color: var(--card-bg-color); --input-border-color: var(--border-color); --input-focus-border-color: var(--accent-color);
+            --input-focus-shadow-color: rgba(9, 105, 218, 0.3); --table-header-bg: #f6f8fa;
+            --table-row-hover-bg: #f6f8fa; --table-row-selected-bg: #ddf4ff; --link-color: var(--accent-color);
+            --code-font: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            --na-value-color: #cdd4de; --pin-color: #d0d7de; --pin-color-active: #ffab00;
+            --alert-color: #ffab00; --alert-glow-color: rgba(255, 171, 0, 0.5);
+        }
+        html[data-theme="dark"] {
+            --bg-color: #0d1117; --card-bg-color: #161b22; --text-color-primary: #c9d1d9;
+            --text-color-secondary: #8b949e; --muted-text-color: #8b949e; --border-color: #30363d;
+            --accent-color: #58a6ff; --positive-color: #3fb950; --negative-color: #f85149; --warning-color: #e3b341;
+            --button-bg-color: #21262d; --button-hover-bg-color: #30363d; --button-border-color: #30363d;
+            --button-active-bg-color: var(--accent-color); --button-active-text-color: #ffffff; --button-active-border-color: var(--accent-color);
+            --input-bg-color: var(--card-bg-color); --input-border-color: var(--border-color); --input-focus-border-color: var(--accent-color);
+            --input-focus-shadow-color: rgba(88, 166, 255, 0.3); --table-header-bg: #161b22;
+            --table-row-hover-bg: #21262d; --table-row-selected-bg: #1f6feb; --link-color: var(--accent-color);
+            --na-value-color: #484f58; --pin-color: #484f58; --pin-color-active: #f1e05a;
+            --alert-color: #f1e05a; --alert-glow-color: rgba(241, 224, 90, 0.5);
+        }
+        /* --- General Styles --- */
+        *, *::before, *::after { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-color-primary); line-height: 1.5; font-size: 14px; }
+        .container { max-width: 1280px; margin: 25px auto; padding: 0 25px; }
+        h1, h2, h3 { text-align: center; }
+        h1 { margin-bottom: 0.5rem; font-weight: 600; font-size: 1.8em; }
+        h2 { color: var(--text-color-secondary); }
+        .subheader { text-align: center; color: var(--text-color-secondary); margin-top: 0; margin-bottom: 1.5rem; font-size: 1.1em; }
+        .title-button-container { text-align: center; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        .action-button, .view-switcher button, #language-selector { padding: 6px 16px; font-size: 0.9em; font-weight: 500; background-color: var(--button-bg-color); color: var(--text-color-primary); border: 1px solid var(--button-border-color); border-radius: 6px; cursor: pointer; transition: background-color 0.15s ease; }
+        .action-button:hover, .view-switcher button:hover { background-color: var(--button-hover-bg-color); }
+        .view-switcher button.active, .sort-options button.active, .sort-options button.current-sort { background-color: var(--button-active-bg-color); color: var(--button-active-text-color); border-color: var(--button-active-border-color); font-weight: 600; }
+        #theme-toggle-btn .fa-sun { display: none; }
+        html[data-theme="dark"] #theme-toggle-btn .fa-sun { display: inline-block; }
+        html[data-theme="dark"] #theme-toggle-btn .fa-moon { display: none; }
+        .controls { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 16px 20px; margin-bottom: 20px; gap: 15px; background-color: var(--card-bg-color); border: 1px solid var(--border-color); border-radius: 6px; }
+        .controls-left, .controls-right { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+        label { margin-bottom: 0.25rem; font-size: 0.875rem; font-weight: 500; color: var(--text-color-secondary); }
+        input[type="text"], input[type="number"], select { width: 100%; padding: 0.5rem 0.75rem; font-size: 0.875rem; color: var(--text-color-primary); background-color: var(--input-bg-color); border: 1px solid var(--input-border-color); border-radius: 0.375rem; transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; }
+        input[type="text"]:focus, input[type="number"]:focus, select:focus { border-color: var(--input-focus-border-color); outline: 0; box-shadow: 0 0 0 0.25rem var(--input-focus-shadow-color); }
+        .table-wrapper { max-height: 75vh; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--card-bg-color); }
+        .styled-table { width: 100%; border-collapse: collapse; }
+        .styled-table th, .styled-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-color); white-space: nowrap; font-size: 0.90em; }
+        .styled-table th { background-color: var(--table-header-bg); font-weight: 600; font-size: 0.75em; text-transform: uppercase; color: var(--muted-text-color); position: sticky; top: 0; z-index: 1; }
+        .styled-table tbody tr:hover { background-color: var(--table-row-hover-bg); cursor: pointer; }
+        .styled-table td.align-right { text-align: right; font-family: var(--code-font); }
+        #item-table td:nth-child(3) { font-weight: 500; } /* Name */
+        #item-table td:nth-child(4) { color: var(--muted-text-color); } /* Category */
+        .pin-icon { cursor: pointer; color: var(--pin-color); font-size: 1.1em; }
+        .pin-icon.pinned { color: var(--pin-color-active); }
+        .alert-icon { color: var(--muted-text-color); }
+        .alert-icon.active { color: var(--alert-color); }
+        .alert-icon.triggered { animation: glow 1.5s infinite alternate; }
+        @keyframes glow { from { text-shadow: 0 0 5px var(--alert-glow-color); } to { text-shadow: 0 0 10px var(--alert-glow-color); } }
+        .trend-positive, .profit-positive { color: var(--positive-color); }
+        .trend-negative, .profit-negative { color: var(--negative-color); }
+        .na-value { color: var(--na-value-color); }
+        .vendor-flip-icon { color: var(--warning-color); margin-left: 8px; font-size: 0.9em; }
+        .pagination { text-align: center; margin-top: 20px; display: flex; justify-content: center; align-items: center; gap: 8px; }
+        .pagination button { padding: 7px 14px; background-color: var(--button-bg-color); border: 1px solid var(--button-border-color); color: var(--accent-color); border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 0.9em; }
+        .pagination button:hover:not(:disabled) { background-color: var(--button-hover-bg-color); }
+        .pagination button:disabled { color: var(--muted-text-color); opacity: 0.6; cursor: not-allowed; }
+        .loading-message, .empty-message { text-align: center; padding: 40px; font-size: 1.1em; color: var(--muted-text-color); }
+        .hidden { display: none; }
+        footer { text-align: center; margin-top: 40px; padding: 25px 0; font-size: 0.8em; color: var(--muted-text-color); border-top: 1px solid var(--border-color); }
+        footer a { color: var(--muted-text-color); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        
+        /* --- Modal Styles --- */
+        .modal { position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; }
+        .modal-content { background-color: var(--card-bg-color); padding: 20px; border: 1px solid var(--border-color); border-radius: 8px; width: 90%; max-width: 900px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .modal-content.small { max-width: 450px; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px; }
+        .modal-header h2, .modal-header h3 { margin: 0; font-size: 1.5em; font-weight: 600; color: var(--accent-color); text-align: left; }
+        .close-btn { color: var(--muted-text-color); font-size: 28px; font-weight: bold; cursor: pointer; transition: color 0.15s ease; }
+        .close-btn:hover, .close-btn:focus { color: var(--negative-color); text-decoration: none; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; align-items: end; }
+        .modal-actions { margin-top: 20px; display: flex; justify-content: flex-end; gap: 10px; }
+        .modal-actions button { padding: 8px 20px; }
+        button.primary { background-color: var(--accent-color); color: white; border-color: var(--accent-color); }
+        button.danger { background-color: var(--negative-color); color: white; border-color: var(--negative-color); }
+
+        /* --- Portfolio & Indices Summary --- */
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .summary-box { background-color: var(--card-bg-color); border: 1px solid var(--border-color); border-radius: 6px; padding: 16px; text-align: center; }
+        .summary-box h3 { margin: 0 0 5px 0; font-size: 0.9em; color: var(--text-color-secondary); font-weight: 500; }
+        .summary-box p { margin: 0; font-size: 1.4em; font-weight: 600; font-family: var(--code-font); }
+        
+        /* --- Toast Notification --- */
+        #toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 2000; display: flex; flex-direction: column; gap: 10px; }
+        .toast { background-color: var(--card-bg-color); color: var(--text-color-primary); padding: 12px 20px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid var(--border-color); opacity: 0; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease; display: flex; align-items: center; gap: 10px; }
+        .toast.show { opacity: 1; transform: translateY(0); }
+        .toast.success { border-left: 4px solid var(--positive-color); }
+        .toast.info { border-left: 4px solid var(--accent-color); }
+        .toast.warning { border-left: 4px solid var(--warning-color); }
+        .toast .icon { font-size: 1.2em; }
+        .toast .fa-check-circle { color: var(--positive-color); }
+        .toast .fa-info-circle { color: var(--accent-color); }
+        .toast .fa-exclamation-triangle { color: var(--warning-color); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MWI Market Data</h1>
+        <p class="subheader">Displaying current market prices and tools.</p>
+        
+        <div class="title-button-container">
+            <button id="theme-toggle-btn" class="action-button" aria-label="Toggle Theme"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+        </div>
+
+        <div class="title-button-container view-switcher" id="view-switcher">
+            <button class="active" data-view="market">Market</button>
+            <button data-view="flipper">Flip Finder</button>
+            <button data-view="portfolio">My Portfolio</button>
+        </div>
+
+        <!-- Main Market View -->
+        <div id="market-view">
+            <div id="market-indices-summary" class="summary-grid hidden"></div>
+            <div class="controls">
+                <div class="controls-left">
+                    <div class="search-form">
+                        <label for="search-input">Search</label>
+                        <input type="text" id="search-input" placeholder="Product Name...">
+                    </div>
+                    <div class="category-filter">
+                        <label for="category-filter">Category</label>
+                        <select id="category-filter">
+                            <option value="All">All Categories</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="controls-right sort-options" id="sort-options">
+                    <span>Sort By:</span>
+                    <button data-sort="name">Name</button>
+                    <button data-sort="category">Category</button>
+                    <button data-sort="ask">Ask</button>
+                    <button data-sort="buy">Buy</button>
+                </div>
+            </div>
+
+            <div id="loading-message" class="loading-message">Loading market data...</div>
+            
+            <div id="market-table-wrapper" class="table-wrapper hidden">
+                <table id="item-table" class="styled-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 35px;" aria-label="Pin Item"><i class="fas fa-thumbtack"></i></th>
+                            <th style="width: 35px;" aria-label="Price Alert"><i class="fas fa-bell"></i></th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Ask</th>
+                            <th>Buy</th>
+                            <th>24h Trend</th>
+                            <th>7d Volatility</th>
+                        </tr>
+                    </thead>
+                    <tbody id="item-table-body"></tbody>
+                </table>
+            </div>
+            <div class="pagination" id="pagination"></div>
+        </div>
+
+        <!-- Flip Finder View -->
+        <div id="flipper-view" class="hidden">
+            <div class="controls" style="justify-content: center;">
+                 <div class="sort-options">
+                    <span>Sort By:</span>
+                    <button data-sort="marketMargin" class="active">Profit Margin</button>
+                    <button data-sort="absoluteProfit">Absolute Profit</button>
+                </div>
+            </div>
+            <div style="text-align: center; margin-bottom: 20px; color: var(--text-color-secondary);">
+                <span>Data Fetched:</span> <span id="flipper-last-update"></span>
+            </div>
+            <div id="flipper-table-wrapper" class="table-wrapper">
+                 <table id="flipper-table" class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Buy Price</th>
+                            <th>Ask Price</th>
+                            <th>Vendor Price</th>
+                            <th>Market Profit Margin</th>
+                            <th>Vendor Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="flipper-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Portfolio View -->
+        <div id="portfolio-view" class="hidden">
+            <h2>My Portfolio</h2>
+            <div id="portfolio-summary" class="summary-grid hidden"></div>
+            <div id="portfolio-table-wrapper" class="table-wrapper">
+                <table id="portfolio-table" class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Avg. Buy Price</th>
+                            <th>Total Cost</th>
+                            <th>Current Value</th>
+                            <th>Profit/Loss</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="portfolio-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <span>Made by Sporky with AI</span> |
+            <span class="status"><span>Data Fetched:</span> <span id="last-update">N/A</span></span> |
+            <a href="https://github.com/SporkSlinger/market-tracker-mwi" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        </footer>
+    </div>
+    
+    <div id="toast-container"></div>
+
+    <!-- Modals -->
+    <div id="itemModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-item-name"></h2>
+                <span class="close-btn" aria-label="Close modal">&times;</span>
+            </div>
+            <p id="modal-category-info"></p>
+            <div class="volatility-section">
+                <div id="modal-volatility"></div>
+                <div id="modal-vendor-price"></div>
+            </div>
+            <h3>Price History (Last 30 Days)</h3>
+            <div class="chart-container" id="chart-parent"><canvas id="priceChart"></canvas></div>
+            <h3 style="margin-top: 20px;">Enhanced Prices</h3>
+            <div id="enhanced-prices-container" class="enhanced-data"></div>
+            <div class="modal-actions">
+                <button id="add-to-portfolio-btn" class="action-button"><i class="fas fa-plus"></i> <span>Add to Portfolio</span></button>
+                <button id="set-alert-btn" class="action-button"><i class="fas fa-bell"></i> <span>Set Price Alert</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolioModal" class="modal">
+        <div class="modal-content small">
+            <div class="modal-header">
+                <h3 id="portfolio-modal-title"></h3>
+                <span class="close-btn" aria-label="Close modal">&times;</span>
+            </div>
+            <div class="form-grid">
+                <div>
+                    <label for="portfolio-quantity">Quantity</label>
+                    <input type="number" id="portfolio-quantity" min="1" step="1">
+                </div>
+                 <div>
+                    <label for="portfolio-price">Buy Price</label>
+                    <input type="number" id="portfolio-price" min="0">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="save-portfolio-item" class="action-button primary">Save</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="alertModal" class="modal">
+        <div class="modal-content small">
+            <div class="modal-header">
+                <h3 id="alert-modal-title"></h3>
+                <span class="close-btn" aria-label="Close modal">&times;</span>
+            </div>
+            <p style="text-align: center; color: var(--text-color-secondary);">Get notified when the price goes above or below your target.</p>
+            <div class="form-grid">
+                 <div>
+                    <label for="alert-condition">Condition</label>
+                    <select id="alert-condition">
+                        <option value="above">Price is Above</option>
+                        <option value="below">Price is Below</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="alert-price">Target Price</label>
+                    <input type="number" id="alert-price" min="0">
+                </div>
+            </div>
+             <div class="modal-actions">
+                <button id="remove-alert-item" class="action-button danger hidden">Remove Alert</button>
+                <button id="save-alert-item" class="action-button primary">Set Alert</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content small">
+             <div class="modal-header">
+                <h3 id="confirm-modal-title"></h3>
+                <span class="close-btn" aria-label="Close modal">&times;</span>
+            </div>
+            <p id="confirm-modal-body" style="text-align: center;"></p>
+            <div class="modal-actions">
+                <button id="confirm-modal-cancel" class="action-button">Cancel</button>
+                <button id="confirm-modal-confirm" class="action-button danger">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // =================================================================================
+        // SCRIPT ORGANIZATION
+        // 1. Global State & Constants
+        // 2. Core Logic & Initialization
+        // 3. Data Loading & Processing
+        // 4. Rendering Functions
+        // 5. Event Handling
+        // 6. Modal Logic
+        // 7. Feature-Specific Logic (Portfolio, Alerts, etc.)
+        // 8. Utility & Helper Functions
+        // =================================================================================
+
+        // --- 1. GLOBAL STATE & CONSTANTS ---
+        let marketSummary = [], enhancedData = {}, historyData = {}, marketIndices = {}, marketDataMap = new Map();
+        let filteredAndSortedSummary = [], portfolio = [], priceAlerts = [];
+        let currentPage = 1, currentSort = 'name_asc', currentSearch = '', currentCategoryFilter = 'All', currentView = 'market';
+        let searchDebounceTimeout, currentItemInModal = null, flipperSortBy = 'marketMargin', lastFocusedElement = null;
+        
+        const itemsPerPage = 50;
+        const PINNED_ITEMS_KEY = 'mwiPinnedItems', THEME_KEY = 'mwi-market-theme';
+        const PORTFOLIO_KEY = 'mwiPortfolio', ALERTS_KEY = 'mwiPriceAlerts';
+        const FILTERS_KEY = 'mwiSessionFilters';
+
+        const DOMElements = {
+            loadingMessage: document.getElementById('loading-message'), viewSwitcher: document.getElementById('view-switcher'),
+            marketView: document.getElementById('market-view'), marketTableWrapper: document.getElementById('market-table-wrapper'),
+            marketIndicesSummary: document.getElementById('market-indices-summary'), tableBody: document.getElementById('item-table-body'), 
+            pagination: document.getElementById('pagination'), searchInput: document.getElementById('search-input'), 
+            categoryFilter: document.getElementById('category-filter'), sortOptions: document.getElementById('sort-options'), 
+            flipperView: document.getElementById('flipper-view'), flipperSortOptions: document.querySelector('#flipper-view .sort-options'), 
+            flipperTableBody: document.getElementById('flipper-table-body'), flipperLastUpdate: document.getElementById('flipper-last-update'), 
+            portfolioView: document.getElementById('portfolio-view'), portfolioSummary: document.getElementById('portfolio-summary'), 
+            portfolioTableBody: document.getElementById('portfolio-table-body'), lastUpdate: document.getElementById('last-update'), 
+            themeToggle: document.getElementById('theme-toggle-btn'), toastContainer: document.getElementById('toast-container')
+        };
+        
+        let priceChartInstance = null;
+        const Modals = {
+            item: { el: document.getElementById('itemModal'), name: document.getElementById('modal-item-name'), category: document.getElementById('modal-category-info'), volatility: document.getElementById('modal-volatility'), vendor: document.getElementById('modal-vendor-price'), enhanced: document.getElementById('enhanced-prices-container'), addPortfolioBtn: document.getElementById('add-to-portfolio-btn'), setAlertBtn: document.getElementById('set-alert-btn') },
+            portfolio: { el: document.getElementById('portfolioModal'), title: document.getElementById('portfolio-modal-title'), quantity: document.getElementById('portfolio-quantity'), price: document.getElementById('portfolio-price'), saveBtn: document.getElementById('save-portfolio-item') },
+            alert: { el: document.getElementById('alertModal'), title: document.getElementById('alert-modal-title'), condition: document.getElementById('alert-condition'), price: document.getElementById('alert-price'), saveBtn: document.getElementById('save-alert-item'), removeBtn: document.getElementById('remove-alert-item') },
+            confirm: { el: document.getElementById('confirmModal'), title: document.getElementById('confirm-modal-title'), body: document.getElementById('confirm-modal-body'), confirmBtn: document.getElementById('confirm-modal-confirm'), cancelBtn: document.getElementById('confirm-modal-cancel') }
+        };
+
+        // --- 2. CORE LOGIC & INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            initFilters();
+            setupEventListeners();
+            loadData();
+        });
+
+        // --- 3. DATA LOADING & PROCESSING ---
+        async function loadData() {
+            DOMElements.loadingMessage.style.display = 'block';
+            DOMElements.marketTableWrapper.classList.add('hidden');
+            
+            portfolio = loadFromStorage(PORTFOLIO_KEY, []);
+            priceAlerts = loadFromStorage(ALERTS_KEY, []);
+            
+            try {
+                const cacheBuster = '?t=' + Date.now();
+                const [summaryRes, enhancedRes, historyRes, indicesRes] = await Promise.all([
+                    fetch('./data/market_summary.json' + cacheBuster), fetch('./data/market_enhanced.json' + cacheBuster),
+                    fetch('./data/market_history.json' + cacheBuster), fetch('./data/market_indices.json' + cacheBuster)
+                ]);
+                
+                if (!summaryRes.ok) throw new Error(`Failed to fetch summary data (Status: ${summaryRes.status})`);
+                
+                marketSummary = await summaryRes.json();
+                marketDataMap.clear();
+                marketSummary.forEach(item => marketDataMap.set(item.name, item));
+                enhancedData = await enhancedRes.json();
+                historyData = await historyRes.json();
+                marketIndices = await indicesRes.json();
+                
+                checkPriceAlerts();
+                populateCategoryFilter();
+                applyFiltersAndSort();
+                
+                const updateTime = new Date().toLocaleString();
+                DOMElements.lastUpdate.textContent = updateTime;
+                DOMElements.flipperLastUpdate.textContent = updateTime;
+                DOMElements.loadingMessage.style.display = 'none';
+                DOMElements.marketTableWrapper.classList.remove('hidden');
+
+            } catch (error) {
+                console.error("Error loading site data:", error);
+                DOMElements.loadingMessage.textContent = `Error: ${error.message}. Please refresh.`;
+            }
+        }
+        
+        function applyFiltersAndSort() {
+            const pinnedItems = loadFromStorage(PINNED_ITEMS_KEY, []);
+            let result = [...marketSummary];
+            if (currentCategoryFilter !== 'All') result = result.filter(item => item.category === currentCategoryFilter);
+            if (currentSearch) result = result.filter(item => item.name.toLowerCase().includes(currentSearch.toLowerCase()));
+            
+            result.sort((a, b) => {
+                const isAPinned = pinnedItems.includes(a.name), isBPinned = pinnedItems.includes(b.name);
+                if (isAPinned !== isBPinned) return isAPinned ? -1 : 1;
+
+                const [sortKey, direction] = currentSort.split('_');
+                const asc = direction === 'asc';
+                const valA = a[sortKey], valB = b[sortKey];
+
+                if (typeof valA === 'number' || typeof valB === 'number') {
+                    const numA = valA ?? (asc ? Infinity : -Infinity);
+                    const numB = valB ?? (asc ? Infinity : -Infinity);
+                    return asc ? numA - numB : numB - numA;
+                } else {
+                    return asc ? (valA || '').localeCompare(valB || '') : (valB || '').localeCompare(valA || '');
+                }
+            });
+            filteredAndSortedSummary = result;
+            currentPage = 1;
+            renderAllViews();
+        }
+
+        // --- 4. RENDERING FUNCTIONS ---
+        function renderAllViews() {
+            if (currentView === 'market') {
+                renderMarketIndices();
+                renderCurrentPage();
+            }
+            else if (currentView === 'flipper') renderFlipper();
+            else if (currentView === 'portfolio') renderPortfolio();
+        }
+
+        function renderMarketIndices() {
+            const sortedIndices = Object.entries(marketIndices).sort(([,a], [,b]) => b - a);
+            if (sortedIndices.length === 0) {
+                DOMElements.marketIndicesSummary.classList.add('hidden');
+                return;
+            }
+            DOMElements.marketIndicesSummary.innerHTML = sortedIndices.map(([category, trend]) => `
+                <div class="summary-box">
+                    <h3>${category}</h3>
+                    <p>${formatTrend(trend)}</p>
+                </div>
+            `).join('');
+            DOMElements.marketIndicesSummary.classList.remove('hidden');
+        }
+
+        function renderCurrentPage() {
+            const pinnedItems = loadFromStorage(PINNED_ITEMS_KEY, []);
+            const itemsToDisplay = filteredAndSortedSummary.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+            
+            DOMElements.tableBody.innerHTML = itemsToDisplay.length === 0 
+                ? `<tr><td colspan="8" class="empty-message">No items match your filters.</td></tr>`
+                : itemsToDisplay.map(item => {
+                    const isPinned = pinnedItems.includes(item.name);
+                    const alert = priceAlerts.find(a => a.name === item.name);
+                    const pinTitle = isPinned ? 'Unpin Item' : 'Pin Item';
+                    const alertTitle = 'Set Price Alert';
+                    const vendorFlip = (item.vendor > item.buy && item.buy > 0) ? `<i class="fas fa-coins vendor-flip-icon" title="Profitable to sell to vendor"></i>` : '';
+                    return `
+                        <tr data-item-name="${item.name}">
+                            <td><i class="fas fa-thumbtack pin-icon ${isPinned ? 'pinned' : ''}" data-item-name="${item.name}" title="${pinTitle}" aria-label="${pinTitle} for ${item.name}"></i></td>
+                            <td><i class="fas fa-bell alert-icon ${alert ? 'active' : ''} ${alert?.triggered ? 'triggered' : ''}" title="${alertTitle}" aria-label="${alertTitle} for ${item.name}"></i></td>
+                            <td>${item.name} ${vendorFlip}</td>
+                            <td>${item.category || formatPrice(null)}</td>
+                            <td class="align-right">${formatPrice(item.ask)}</td>
+                            <td class="align-right">${formatPrice(item.buy)}</td>
+                            <td class="align-right">${formatTrend(item.trend)}</td>
+                            <td class="align-right">${formatVolatility(item.volatility_norm_7d)}</td>
+                        </tr>`;
+                }).join('');
+            updatePagination();
+        }
+
+        function renderFlipper() {
+            const flips = marketSummary
+                .map(item => ({...item, marketMargin: (item.ask && item.buy > 0) ? ((item.ask - item.buy) / item.buy) * 100 : null, absoluteProfit: (item.ask && item.buy) ? item.ask - item.buy : null, vendorProfit: (item.vendor && item.buy) ? item.vendor - item.buy : null }))
+                .filter(item => (item.marketMargin > 0 || item.vendorProfit > 0))
+                .sort((a, b) => (b[flipperSortBy] || -Infinity) - (a[flipperSortBy] || -Infinity));
+
+            DOMElements.flipperTableBody.innerHTML = flips.length === 0
+                ? `<tr><td colspan="6" class="empty-message">No profitable flips found.</td></tr>`
+                : flips.map(item => `
+                    <tr data-item-name="${item.name}">
+                        <td>${item.name}</td>
+                        <td class="align-right">${formatPrice(item.buy)}</td>
+                        <td class="align-right">${formatPrice(item.ask)}</td>
+                        <td class="align-right">${formatPrice(item.vendor)}</td>
+                        <td class="align-right">${item.marketMargin ? `<span class="profit-positive">${item.marketMargin.toFixed(2)}%</span>` : formatPrice(null)}</td>
+                        <td class="align-right">${item.vendorProfit > 0 ? `<span class="profit-positive">${formatPrice(item.vendorProfit)}</span>` : formatPrice(null)}</td>
+                    </tr>`).join('');
+        }
+
+        function renderPortfolio() {
+            DOMElements.portfolioSummary.classList.toggle('hidden', portfolio.length === 0);
+            if (portfolio.length === 0) {
+                DOMElements.portfolioTableBody.innerHTML = `<tr><td colspan="7" class="empty-message">Your portfolio is empty.</td></tr>`;
+                return;
+            }
+
+            let totalCost = 0, totalValue = 0;
+            DOMElements.portfolioTableBody.innerHTML = portfolio.map(pItem => {
+                const marketItem = marketDataMap.get(pItem.name);
+                const currentPrice = marketItem?.ask ?? 0;
+                const itemValue = pItem.quantity * currentPrice;
+                const itemCost = pItem.quantity * pItem.price;
+                const profitLoss = itemValue - itemCost;
+                totalCost += itemCost;
+                totalValue += itemValue;
+                return `
+                    <tr data-item-name="${pItem.name}">
+                        <td>${pItem.name}</td>
+                        <td class="align-right">${pItem.quantity.toLocaleString()}</td>
+                        <td class="align-right">${formatPrice(pItem.price)}</td>
+                        <td class="align-right">${formatPrice(itemCost)}</td>
+                        <td class="align-right">${formatPrice(itemValue)}</td>
+                        <td class="align-right"><span class="${profitLoss >= 0 ? 'profit-positive' : 'profit-negative'}">${formatPrice(profitLoss)}</span></td>
+                        <td>
+                            <button class="action-button edit-portfolio-btn" data-name="${pItem.name}">Edit</button>
+                            <button class="action-button remove-portfolio-btn" data-name="${pItem.name}">Remove</button>
+                        </td>
+                    </tr>`;
+            }).join('');
+
+            const totalProfitLoss = totalValue - totalCost;
+            DOMElements.portfolioSummary.innerHTML = `
+                <div class="summary-box"><h3>Initial Investment</h3><p>${formatPrice(totalCost)}</p></div>
+                <div class="summary-box"><h3>Total Portfolio Value</h3><p>${formatPrice(totalValue)}</p></div>
+                <div class="summary-box"><h3>Total Profit/Loss</h3><p class="${totalProfitLoss >= 0 ? 'profit-positive' : 'profit-negative'}">${formatPrice(totalProfitLoss)}</p></div>`;
+        }
+
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredAndSortedSummary.length / itemsPerPage) || 1;
+            currentPage = Math.max(1, Math.min(currentPage, totalPages));
+            DOMElements.pagination.querySelector('#page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+            DOMElements.pagination.querySelector('#prev-page').disabled = currentPage <= 1;
+            DOMElements.pagination.querySelector('#next-page').disabled = currentPage >= totalPages;
+            DOMElements.pagination.style.display = totalPages > 1 ? 'flex' : 'none';
+        }
+
+        // --- 5. EVENT HANDLING ---
+        function setupEventListeners() {
+            DOMElements.viewSwitcher.addEventListener('click', e => e.target.tagName === 'BUTTON' && switchView(e.target.dataset.view));
+            DOMElements.searchInput.addEventListener('input', handleSearchInput);
+            DOMElements.categoryFilter.addEventListener('change', handleCategoryChange);
+            DOMElements.sortOptions.addEventListener('click', handleSortClick);
+            DOMElements.flipperSortOptions.addEventListener('click', handleFlipperSortClick);
+            DOMElements.tableBody.addEventListener('click', handleTableClick);
+            DOMElements.flipperTableBody.addEventListener('click', handleTableClick);
+            DOMElements.portfolioTableBody.addEventListener('click', handlePortfolioActions);
+            DOMElements.themeToggle.addEventListener('click', () => applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+            
+            DOMElements.pagination.innerHTML = `<button id="prev-page">&laquo; Previous</button><span id="page-info"></span><button id="next-page">Next &raquo;</button>`;
+            DOMElements.pagination.querySelector('#prev-page').addEventListener('click', () => { if(currentPage > 1){ currentPage--; renderCurrentPage(); } });
+            DOMElements.pagination.querySelector('#next-page').addEventListener('click', () => { const totalPages = Math.ceil(filteredAndSortedSummary.length / itemsPerPage); if(currentPage < totalPages){ currentPage++; renderCurrentPage(); } });
+            
+            Modals.item.addPortfolioBtn.addEventListener('click', e => showPortfolioModal(e.target.dataset.name));
+            Modals.item.setAlertBtn.addEventListener('click', e => showAlertModal(e.target.dataset.name));
+            Modals.portfolio.saveBtn.addEventListener('click', handleSavePortfolio);
+            Modals.alert.saveBtn.addEventListener('click', handleSaveAlert);
+            Modals.alert.removeBtn.addEventListener('click', handleRemoveAlert);
+            document.querySelectorAll('.modal .close-btn').forEach(btn => btn.addEventListener('click', e => closeModal(e.target.closest('.modal'))));
+            window.addEventListener('click', e => { if (e.target.classList.contains('modal')) closeModal(e.target); });
+            document.addEventListener('keydown', handleGlobalHotkeys);
+            
+            updateSortButtons();
+        }
+        
+        function handleSearchInput(e) {
+            clearTimeout(searchDebounceTimeout);
+            searchDebounceTimeout = setTimeout(() => {
+                currentSearch = e.target.value;
+                saveFilters();
+                applyFiltersAndSort();
+            }, 300);
+        }
+
+        function handleCategoryChange(e) {
+            currentCategoryFilter = e.target.value;
+            saveFilters();
+            applyFiltersAndSort();
+        }
+
+        function handleSortClick(e) {
+            if (e.target.tagName !== 'BUTTON') return;
+            const sortKey = e.target.dataset.sort;
+            const [currentKey, currentDir] = currentSort.split('_');
+            currentSort = (currentKey === sortKey && currentDir === 'asc') ? `${sortKey}_desc` : `${sortKey}_asc`;
+            updateSortButtons();
+            applyFiltersAndSort();
+        }
+        
+        function handleFlipperSortClick(e) {
+            if (e.target.tagName !== 'BUTTON') return;
+            flipperSortBy = e.target.dataset.sort;
+            DOMElements.flipperSortOptions.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            renderFlipper();
+        }
+
+        function handleTableClick(e) {
+            lastFocusedElement = e.target;
+            const row = e.target.closest('tr');
+            if (!row || !row.dataset.itemName) return;
+            const itemName = row.dataset.itemName;
+            
+            if (e.target.closest('.pin-icon')) { togglePin(itemName); } 
+            else if(e.target.closest('.alert-icon')) { showAlertModal(itemName); } 
+            else { showItemDetails(itemName); }
+        }
+
+        function handlePortfolioActions(e) {
+            lastFocusedElement = e.target;
+            const name = e.target.dataset.name;
+            if (e.target.classList.contains('edit-portfolio-btn')) {
+                const item = portfolio.find(p => p.name === name);
+                if (item) showPortfolioModal(name, item.quantity, item.price);
+            } else if (e.target.classList.contains('remove-portfolio-btn')) {
+                showConfirm('Confirm Removal', `Are you sure you want to remove ${name} from your portfolio?`, () => {
+                    portfolio = portfolio.filter(p => p.name !== name);
+                    saveToStorage(PORTFOLIO_KEY, portfolio);
+                    renderPortfolio();
+                    showToast(`${name} removed from portfolio.`, 'info');
+                });
+            }
+        }
+        
+        const hotkeyMap = {
+            'm': () => switchView('market'),
+            'f': () => switchView('flipper'),
+            'p': () => switchView('portfolio'),
+            '/': (e) => { e.preventDefault(); DOMElements.searchInput.focus(); },
+            't': () => DOMElements.themeToggle.click()
+        };
+        
+        function handleGlobalHotkeys(e) {
+            const openModal = document.querySelector('.modal[style*="display: flex"]');
+            if (openModal) {
+                if (e.key === 'Escape') closeModal(openModal);
+                return;
+            }
+            if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'SELECT') {
+                if (e.key === 'Escape') document.activeElement.blur();
+                return;
+            }
+            const handler = hotkeyMap[e.key.toLowerCase()];
+            if (handler) handler(e);
+        }
+
+        // --- 6. MODAL LOGIC ---
+        function closeModal(modalElement) {
+            modalElement.style.display = 'none';
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+                lastFocusedElement = null;
+            }
+            currentItemInModal = null;
+        }
+
+        function showItemDetails(itemName) {
+            const item = marketDataMap.get(itemName);
+            if (!item) return;
+            
+            currentItemInModal = itemName; 
+            Modals.item.name.textContent = itemName;
+            Modals.item.category.textContent = `Category: ${item.category || 'N/A'}`;
+            Modals.item.volatility.innerHTML = `Volatility (7d CV): <strong>${formatVolatility(item.volatility_norm_7d)}</strong>`;
+            Modals.item.vendor.innerHTML = `Vendor Price: <strong>${formatPrice(item.vendor)}</strong>`;
+            Modals.item.addPortfolioBtn.dataset.name = itemName;
+            Modals.item.setAlertBtn.dataset.name = itemName;
+            
+            renderEnhancedPrices(enhancedData[itemName]);
+            renderChart(historyData[itemName]);
+            Modals.item.el.style.display = 'flex';
+        }
+        
+        function showPortfolioModal(name, quantity = 1, price = '') {
+            Modals.portfolio.title.textContent = portfolio.some(p=>p.name===name) ? `Edit ${name}` : `Add ${name} to Portfolio`;
+            Modals.portfolio.quantity.value = quantity;
+            const marketItem = marketDataMap.get(name);
+            Modals.portfolio.price.value = price || marketItem?.buy || '';
+            Modals.portfolio.saveBtn.dataset.name = name;
+            Modals.portfolio.el.style.display = 'flex';
+            setTimeout(() => Modals.portfolio.quantity.focus(), 50);
+        }
+        
+        function showAlertModal(name) {
+            const alert = priceAlerts.find(a => a.name === name);
+            Modals.alert.title.textContent = `Set Price Alert for ${name}`;
+            Modals.alert.condition.value = alert?.condition || 'below';
+            const marketItem = marketDataMap.get(name);
+            Modals.alert.price.value = alert?.price || marketItem?.ask || '';
+            Modals.alert.saveBtn.dataset.name = name;
+            Modals.alert.removeBtn.dataset.name = name;
+            Modals.alert.removeBtn.classList.toggle('hidden', !alert);
+            Modals.alert.el.style.display = 'flex';
+            setTimeout(() => Modals.alert.price.focus(), 50);
+        }
+
+        function showConfirm(title, body, onConfirmCallback) {
+            Modals.confirm.title.textContent = title;
+            Modals.confirm.body.textContent = body;
+            Modals.confirm.el.style.display = 'flex';
+
+            const confirmHandler = () => { onConfirmCallback(); closeModal(Modals.confirm.el); };
+            const cancelHandler = () => closeModal(Modals.confirm.el);
+            
+            Modals.confirm.confirmBtn.addEventListener('click', confirmHandler, { once: true });
+            Modals.confirm.cancelBtn.addEventListener('click', cancelHandler, { once: true });
+            
+            const observer = new MutationObserver(() => {
+                if (Modals.confirm.el.style.display === 'none') {
+                    Modals.confirm.confirmBtn.removeEventListener('click', confirmHandler);
+                    Modals.confirm.cancelBtn.removeEventListener('click', cancelHandler);
+                    observer.disconnect();
+                }
+            });
+            observer.observe(Modals.confirm.el, { attributes: true, attributeFilter: ['style'] });
+
+            setTimeout(() => Modals.confirm.cancelBtn.focus(), 50);
+        }
+
+        // --- 7. FEATURE-SPECIFIC LOGIC ---
+        function handleSavePortfolio(e) {
+            const name = e.target.dataset.name;
+            const quantity = parseInt(Modals.portfolio.quantity.value);
+            const price = parseFloat(Modals.portfolio.price.value);
+            if (!name || isNaN(quantity) || isNaN(price) || quantity <= 0 || price < 0) return;
+
+            const existingIndex = portfolio.findIndex(item => item.name === name);
+            if (existingIndex > -1) portfolio[existingIndex] = { name, quantity, price };
+            else portfolio.push({ name, quantity, price });
+            
+            saveToStorage(PORTFOLIO_KEY, portfolio);
+            renderPortfolio();
+            closeModal(Modals.portfolio.el);
+            showToast('Portfolio saved!');
+        }
+
+        function handleSaveAlert(e) {
+            const name = e.target.dataset.name;
+            const condition = Modals.alert.condition.value;
+            const price = parseFloat(Modals.alert.price.value);
+            if (!name || isNaN(price) || price < 0) return;
+            
+            const existingIndex = priceAlerts.findIndex(a => a.name === name);
+            const newAlert = { name, condition, price, triggered: false };
+            if (existingIndex > -1) priceAlerts[existingIndex] = newAlert;
+            else priceAlerts.push(newAlert);
+
+            saveToStorage(ALERTS_KEY, priceAlerts);
+            checkPriceAlerts();
+            renderCurrentPage();
+            closeModal(Modals.alert.el);
+            showToast('Price alert set!', 'info');
+        }
+
+        function handleRemoveAlert(e) {
+            const name = e.target.dataset.name;
+            priceAlerts = priceAlerts.filter(a => a.name !== name);
+            saveToStorage(ALERTS_KEY, priceAlerts);
+            renderCurrentPage();
+            closeModal(Modals.alert.el);
+        }
+        
+        function checkPriceAlerts() {
+            let alertsChanged = false;
+            priceAlerts.forEach(alert => {
+                const item = marketDataMap.get(alert.name);
+                if (!item || item.ask === null) return;
+                let triggered = (alert.condition === 'above' && item.ask > alert.price) || (alert.condition === 'below' && item.ask < alert.price);
+                if (alert.triggered !== triggered) {
+                    alert.triggered = triggered;
+                    alertsChanged = true;
+                }
+            });
+            if (alertsChanged) saveToStorage(ALERTS_KEY, priceAlerts);
+        }
+
+        function togglePin(itemName) {
+            let pins = loadFromStorage(PINNED_ITEMS_KEY, []);
+            const index = pins.indexOf(itemName);
+            if (index > -1) pins.splice(index, 1);
+            else pins.push(itemName);
+            saveToStorage(PINNED_ITEMS_KEY, pins);
+            applyFiltersAndSort();
+        }
+
+        // --- 8. UTILITY & HELPER FUNCTIONS ---
+        function switchView(view) {
+            currentView = view;
+            window.scrollTo(0, 0);
+            Object.keys(DOMElements).filter(k => k.endsWith('View')).forEach(k => DOMElements[k].classList.add('hidden'));
+            DOMElements[`${view}View`].classList.remove('hidden');
+            DOMElements.viewSwitcher.querySelectorAll('button').forEach(btn => btn.classList.toggle('active', btn.dataset.view === view));
+            renderAllViews();
+        }
+        
+        function initFilters() {
+            const savedFilters = JSON.parse(sessionStorage.getItem(FILTERS_KEY)) || {};
+            currentSearch = savedFilters.search || '';
+            currentCategoryFilter = savedFilters.category || 'All';
+            DOMElements.searchInput.value = currentSearch;
+            DOMElements.categoryFilter.value = currentCategoryFilter;
+        }
+
+        function saveFilters() { sessionStorage.setItem(FILTERS_KEY, JSON.stringify({ search: currentSearch, category: currentCategoryFilter })); }
+        function loadFromStorage(key, defaultValue) { try { return JSON.parse(localStorage.getItem(key)) || defaultValue; } catch (e) { return defaultValue; } }
+        function saveToStorage(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+        function initTheme() { const savedTheme = localStorage.getItem(THEME_KEY) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); applyTheme(savedTheme, false); }
+        function applyTheme(theme, fromClick = true) { document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light'); if (theme !== 'dark') document.documentElement.removeAttribute('data-theme'); localStorage.setItem(THEME_KEY, theme); if (fromClick && currentItemInModal) { renderChart(historyData[currentItemInModal]); } }
+        function populateCategoryFilter() { const categories = [...new Set(marketSummary.map(item => item.category).filter(Boolean))].sort(); DOMElements.categoryFilter.innerHTML = `<option value="All">All Categories</option>`; categories.forEach(c => { const opt = document.createElement('option'); opt.value = c; opt.textContent = c; DOMElements.categoryFilter.appendChild(opt); }); DOMElements.categoryFilter.value = currentCategoryFilter; }
+        function formatPrice(price) { if (price == null) return '<span class="na-value">--</span>'; return price.toLocaleString(); }
+        function formatTrend(trend) { if (trend == null) return formatPrice(null); const cls = trend >= 0 ? 'trend-positive' : 'trend-negative'; return `<span class="${cls}">${trend > 0 ? '+' : ''}${trend.toFixed(2)}%</span>`; }
+        function formatVolatility(cv) { if (cv == null) return formatPrice(null); return `${cv.toFixed(2)}%`; }
+        function updateSortButtons() { DOMElements.sortOptions.querySelectorAll('button').forEach(btn => { const sortKey = btn.dataset.sort; let text = btn.textContent.replace(/ [▲▼]/, ''); if (sortKey === currentSort.split('_')[0]) { text += currentSort.endsWith('asc') ? ' ▲' : ' ▼'; } btn.textContent = text; btn.classList.toggle('current-sort', sortKey === currentSort.split('_')[0]); }); }
+        function renderEnhancedPrices(enhanced) { Modals.item.enhanced.innerHTML = (enhanced && enhanced.tiers && Object.keys(enhanced.tiers).length > 0) ? Object.keys(enhanced.tiers).sort((a,b)=>parseInt(a)-parseInt(b)).map(tier => `<div class="enhanced-tier"><div class="tier-label">Tier +${tier}</div><div class="tier-prices"><span class="tier-ask">Ask: ${formatPrice(enhanced.tiers[tier].ask)}</span><span class="tier-buy">Buy: ${formatPrice(enhanced.tiers[tier].buy)}</span></div></div>`).join('') : `<div style="grid-column: 1 / -1; color: var(--muted-text-color);">No enhanced price data available.</div>`; }
+        function renderChart(data) { if(priceChartInstance) priceChartInstance.destroy(); const parent = document.getElementById('chart-parent'); parent.innerHTML = '<canvas id="priceChart"></canvas>'; const canvas = document.getElementById('priceChart'); if(!data || data.length === 0){ parent.innerHTML = `<p class="empty-message">Not enough historical data available for this item.</p>`; return; } const points = data.map(p=>({x:p[0],ask:p[1],buy:p[2]})).filter(p=>p.ask!==null||p.buy!==null); priceChartInstance = new Chart(canvas, { type:'line', data:{ datasets:[{label:'Ask Price',data:points.map(p=>({x:p.x,y:p.ask})),borderColor:'var(--negative-color)',tension:0.1,pointRadius:1,spanGaps:true},{label:'Buy Price',data:points.map(p=>({x:p.x,y:p.buy})),borderColor:'var(--positive-color)',tension:0.1,pointRadius:1,spanGaps:true}] }, options:{ responsive:true,maintainAspectRatio:false,scales:{x:{type:'time',time:{unit:'day',tooltipFormat:'MMM d, yyyy h:mm a'},ticks:{color:'var(--text-color-secondary)'},grid:{color:'var(--border-color)'}},y:{ticks:{callback:v=>v.toLocaleString(),color:'var(--text-color-secondary)'},grid:{color:'var(--border-color)'}}},plugins:{legend:{labels:{color:'var(--text-color-primary)'}},tooltip:{mode:'index',intersect:false}},interaction:{mode:'index',intersect:false}} }); }
+        function showToast(message, type = 'success', duration = 3000) { const icons = { success: 'fa-check-circle', info: 'fa-info-circle', warning: 'fa-exclamation-triangle' }; const toast = document.createElement('div'); toast.className = `toast ${type}`; toast.innerHTML = `<i class="fas ${icons[type]} icon"></i> ${message}`; DOMElements.toastContainer.appendChild(toast); setTimeout(() => toast.classList.add('show'), 10); setTimeout(() => { toast.classList.remove('show'); toast.addEventListener('transitionend', () => toast.remove()); }, duration); }
+    </script>
+</body>
+</html>
+
