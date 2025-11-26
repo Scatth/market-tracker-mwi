@@ -20,7 +20,8 @@ JSON_PATH = "marketplace.json"
 CATEGORY_FILE_PATH = "cata.txt"
 
 # Output directory for static files
-OUTPUT_DIR = "output"
+script_dir = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_DIR = os.path.join(script_dir, "output")
 OUTPUT_DATA_DIR = os.path.join(OUTPUT_DIR, "data")
 TEMPLATE_DIR = "templates"
 
