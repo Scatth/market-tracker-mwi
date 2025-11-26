@@ -113,7 +113,8 @@ def load_historical_data(days_to_load):
 
     # 2. Process each dataframe independently.
     def melt_and_process(df, value_name):
-        if df.empty or 'time' not in df.columns: return pd.DataFrame()
+        if df.empty or 'time' not in df.columns:
+            return pd.DataFrame()
         id_vars, value_vars = ['time'], [col for col in df.columns if col != 'time']
         df_long = df.melt(id_vars=id_vars, value_vars=value_vars, var_name='product', value_name=value_name)
         df_long[value_name] = pd.to_numeric(df_long[value_name], errors='coerce').replace(-1, pd.NA)
@@ -124,7 +125,8 @@ def load_historical_data(days_to_load):
     ask_df = melt_and_process(ask_df_wide, 'ask')
     buy_df = melt_and_process(bid_df_wide, 'buy')
 
-    if ask_df.empty and buy_df.empty: return pd.DataFrame()
+    if ask_df.empty and buy_df.empty:
+        return pd.DataFrame()
     
     # 3. Correctly merge the clean dataframes.
     if ask_df.empty:
@@ -232,7 +234,8 @@ def process_data_in_one_pass(df, item_categories, vendor_prices, vol_days=7):
     return market_summary, history
 
 def calculate_market_indices(market_summary):
-    if not market_summary: return {}
+    if not market_summary:
+        return {}
     logging.info("Calculating market indices...")
     category_trends = defaultdict(list)
     for item in market_summary:
@@ -242,6 +245,46 @@ def calculate_market_indices(market_summary):
             category_trends[category].append(trend)
             
     return {cat: np.mean(trends) for cat, trends in category_trends.items() if trends}
+
+# --- NOVO: Export simples para a sua tool ---
+def export_tool_prices(market_summary):
+    """
+    Gera um JSON simples com os dados que a calculadora PyQt vai usar.
+    Formato:
+    {
+      "generated_at": "...",
+      "items": {
+        "Milk": {
+          "category": "Resources",
+          "ask": 110,
+          "bid": 105,
+          "vendor": 15
+        },
+        ...
+      }
+    }
+    """
+    logging.info("Exporting simple price JSON for external tools...")
+    data = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "items": {}
+    }
+
+    for item in market_summary:
+        name = item.get("name")
+        if not name:
+            continue
+        data["items"][name] = {
+            "category": item.get("category", "Unknown"),
+            "ask": item.get("ask"),
+            "bid": item.get("buy"),
+            "vendor": item.get("vendor"),
+        }
+
+    out_path = os.path.join(OUTPUT_DIR, "mwi_prices.json")
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, default=lambda x: None if pd.isna(x) else x, indent=2)
+    logging.info(f"Saved mwi_prices.json at {out_path}")
 
 
 def main():
@@ -283,9 +326,11 @@ def main():
         enhanced_data[human_name]['tiers'][row['tier']] = {'ask': row['ask'], 'buy': row['buy']}
     write_json(dict(enhanced_data), 'market_enhanced.json')
 
+    # <<< NOVO: export para tua tool >>>
+    export_tool_prices(market_summary)
+
     shutil.copy(os.path.join(TEMPLATE_DIR, "index.html"), os.path.join(OUTPUT_DIR, "index.html"))
     logging.info("--- Build Finished Successfully ---")
 
 if __name__ == '__main__':
     main()
-
