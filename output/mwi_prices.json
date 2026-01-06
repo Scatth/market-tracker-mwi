@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-06T16:22:08.910384+00:00",
+  "generated_at": "2026-01-06T17:19:55.824612+00:00",
   "items": {
     "Abyssal Essence": {
       "category": "Resources",
@@ -9,7 +9,7 @@
     },
     "Acrobatic Hood": {
       "category": "Equipment / Head",
-      "ask": 74000000,
+      "ask": 80000000,
       "bid": 72000000,
       "vendor": null
     },
@@ -33,8 +33,8 @@
     },
     "Advanced Brewing Charm": {
       "category": "Resources",
-      "ask": 15500000,
-      "bid": 15000000,
+      "ask": 17000000,
+      "bid": 15500000,
       "vendor": null
     },
     "Advanced Cheesesmithing Charm": {
@@ -57,7 +57,7 @@
     },
     "Advanced Defense Charm": {
       "category": "Resources",
-      "ask": 7000000,
+      "ask": 6800000,
       "bid": 6600000,
       "vendor": null
     },
@@ -105,14 +105,14 @@
     },
     "Advanced Stamina Charm": {
       "category": "Resources",
-      "ask": 9200000,
+      "ask": 9000000,
       "bid": 8400000,
       "vendor": null
     },
     "Advanced Tailoring Charm": {
       "category": "Resources",
-      "ask": 17000000,
-      "bid": 14500000,
+      "ask": 16000000,
+      "bid": 15000000,
       "vendor": null
     },
     "Advanced Woodcutting Charm": {
@@ -135,14 +135,14 @@
     },
     "Alchemy Essence": {
       "category": "Resources",
-      "ask": 490,
-      "bid": 470,
+      "ask": 500,
+      "bid": 480,
       "vendor": null
     },
     "Alchemy Tea": {
       "category": "Consumables",
       "ask": 1100,
-      "bid": 960,
+      "bid": 980,
       "vendor": null
     },
     "Amber": {
@@ -159,14 +159,14 @@
     },
     "Anchorbound Plate Body": {
       "category": "Equipment / Body",
-      "ask": 98000000,
+      "ask": 105000000,
       "bid": 96000000,
       "vendor": null
     },
     "Anchorbound Plate Legs": {
       "category": "Equipment / Legs",
-      "ask": 86000000,
-      "bid": 78000000,
+      "ask": 88000000,
+      "bid": 74000000,
       "vendor": null
     },
     "Apple": {
@@ -177,14 +177,14 @@
     },
     "Apple Gummy": {
       "category": "Consumables",
-      "ask": 25,
+      "ask": 23,
       "bid": 22,
       "vendor": null
     },
     "Apple Yogurt": {
       "category": "Consumables",
-      "ask": 800,
-      "bid": 470,
+      "ask": 760,
+      "bid": 480,
       "vendor": null
     },
     "Aqua Arrow": {
@@ -195,7 +195,7 @@
     },
     "Aqua Essence": {
       "category": "Resources",
-      "ask": 40,
+      "ask": 41,
       "bid": 39,
       "vendor": null
     },
@@ -219,7 +219,7 @@
     },
     "Arcane Fire Staff": {
       "category": "Equipment / Main Hand",
-      "ask": 1150000,
+      "ask": 1100000,
       "bid": 1050000,
       "vendor": null
     },
@@ -237,7 +237,7 @@
     },
     "Arcane Nature Staff": {
       "category": "Equipment / Main Hand",
-      "ask": 1100000,
+      "ask": 1050000,
       "bid": 1000000,
       "vendor": null
     },
@@ -249,7 +249,7 @@
     },
     "Arcane Water Staff": {
       "category": "Equipment / Main Hand",
-      "ask": 1150000,
+      "ask": 1200000,
       "bid": 1100000,
       "vendor": null
     },
@@ -261,32 +261,32 @@
     },
     "Attack Coffee": {
       "category": "Consumables",
-      "ask": 1200,
-      "bid": 1150,
+      "ask": 1250,
+      "bid": 1200,
       "vendor": null
     },
     "Azure Alembic": {
       "category": "Tools / Alchemy",
-      "ask": 64000,
-      "bid": 44000,
+      "ask": 66000,
+      "bid": 46000,
       "vendor": null
     },
     "Azure Boots": {
       "category": "Equipment / Feet",
-      "ask": 39000,
-      "bid": 35000,
+      "ask": 40000,
+      "bid": 36000,
       "vendor": null
     },
     "Azure Brush": {
       "category": "Tools / Milking",
-      "ask": 62000,
+      "ask": 64000,
       "bid": 54000,
       "vendor": null
     },
     "Azure Buckler": {
       "category": "Equipment / Off Hand",
-      "ask": 56000,
-      "bid": 44000,
+      "ask": 58000,
+      "bid": 45000,
       "vendor": null
     },
     "Azure Bulwark": {
@@ -303,68 +303,68 @@
     },
     "Azure Chisel": {
       "category": "Tools / Crafting",
-      "ask": 60000,
-      "bid": 52000,
+      "ask": 64000,
+      "bid": 54000,
       "vendor": null
     },
     "Azure Enhancer": {
       "category": "Tools / Enhancing",
-      "ask": 62000,
-      "bid": 45000,
+      "ask": 64000,
+      "bid": 50000,
       "vendor": null
     },
     "Azure Gauntlets": {
       "category": "Equipment / Hands",
       "ask": 38000,
-      "bid": null,
+      "bid": 20000,
       "vendor": null
     },
     "Azure Hammer": {
       "category": "Tools / Cheesesmithing",
       "ask": 76000,
-      "bid": 54000,
+      "bid": 56000,
       "vendor": null
     },
     "Azure Hatchet": {
       "category": "Tools / Woodcutting",
       "ask": 60000,
-      "bid": 52000,
+      "bid": 56000,
       "vendor": null
     },
     "Azure Helmet": {
       "category": "Equipment / Head",
-      "ask": 48000,
-      "bid": 44000,
+      "ask": 47000,
+      "bid": 38000,
       "vendor": null
     },
     "Azure Mace": {
       "category": "Equipment / Main Hand",
-      "ask": 70000,
+      "ask": 68000,
       "bid": 66000,
       "vendor": null
     },
     "Azure Milk": {
       "category": "Resources",
-      "ask": 265,
+      "ask": 270,
       "bid": 260,
       "vendor": null
     },
     "Azure Needle": {
       "category": "Tools / Tailoring",
-      "ask": 56000,
+      "ask": 60000,
       "bid": 54000,
       "vendor": null
     },
     "Azure Plate Body": {
       "category": "Equipment / Body",
       "ask": 72000,
-      "bid": 68000,
+      "bid": 70000,
       "vendor": null
     },
     "Azure Plate Legs": {
       "category": "Equipment / Legs",
       "ask": 64000,
-      "bid": 48000,
+      "bid": 60000,
       "vendor": null
     },
     "Azure Pot": {
@@ -382,12 +382,12 @@
     "Azure Spatula": {
       "category": "Tools / Cooking",
       "ask": 72000,
-      "bid": 62000,
+      "bid": 58000,
       "vendor": null
     },
     "Azure Spear": {
       "category": "Equipment / Main Hand",
-      "ask": 68000,
+      "ask": 70000,
       "bid": 66000,
       "vendor": null
     },
@@ -405,44 +405,44 @@
     },
     "Bamboo Boots": {
       "category": "Equipment / Feet",
-      "ask": 100000,
+      "ask": 165000,
       "bid": 32000,
       "vendor": null
     },
     "Bamboo Branch": {
       "category": "Resources",
-      "ask": 29,
+      "ask": 28,
       "bid": 26,
       "vendor": null
     },
     "Bamboo Fabric": {
       "category": "Resources",
-      "ask": 700,
-      "bid": 680,
+      "ask": 720,
+      "bid": 700,
       "vendor": null
     },
     "Bamboo Gloves": {
       "category": "Equipment / Hands",
       "ask": 54000,
-      "bid": 41000,
+      "bid": 44000,
       "vendor": null
     },
     "Bamboo Hat": {
       "category": "Equipment / Head",
-      "ask": 58000,
-      "bid": 48000,
+      "ask": 54000,
+      "bid": 49000,
       "vendor": null
     },
     "Bamboo Robe Bottoms": {
       "category": "Equipment / Legs",
-      "ask": 84000,
-      "bid": 72000,
+      "ask": 80000,
+      "bid": 68000,
       "vendor": null
     },
     "Bamboo Robe Top": {
       "category": "Equipment / Body",
-      "ask": 90000,
-      "bid": 78000,
+      "ask": 82000,
+      "bid": 76000,
       "vendor": null
     },
     "Basic Alchemy Charm": {
@@ -472,12 +472,12 @@
     "Basic Cooking Charm": {
       "category": "Resources",
       "ask": 2600000,
-      "bid": 2450000,
+      "bid": 2400000,
       "vendor": null
     },
     "Basic Crafting Charm": {
       "category": "Resources",
-      "ask": 3100000,
+      "ask": 3200000,
       "bid": 2800000,
       "vendor": null
     },
@@ -507,8 +507,8 @@
     },
     "Basic Magic Charm": {
       "category": "Resources",
-      "ask": 860000,
-      "bid": 840000,
+      "ask": 840000,
+      "bid": 820000,
       "vendor": null
     },
     "Basic Melee Charm": {
@@ -519,7 +519,7 @@
     },
     "Basic Milking Charm": {
       "category": "Resources",
-      "ask": 2700000,
+      "ask": 2650000,
       "bid": 2300000,
       "vendor": null
     },
@@ -538,7 +538,7 @@
     "Basic Tailoring Charm": {
       "category": "Resources",
       "ask": 2250000,
-      "bid": 2000000,
+      "bid": 2050000,
       "vendor": null
     },
     "Basic Woodcutting Charm": {
@@ -580,18 +580,18 @@
     "Beast Hood": {
       "category": "Equipment / Head",
       "ask": 165000,
-      "bid": 145000,
+      "bid": 135000,
       "vendor": null
     },
     "Beast Leather": {
       "category": "Resources",
-      "ask": 1600,
+      "ask": 1650,
       "bid": 1550,
       "vendor": null
     },
     "Beast Tunic": {
       "category": "Equipment / Body",
-      "ask": 260000,
+      "ask": 255000,
       "bid": 250000,
       "vendor": null
     },
@@ -610,25 +610,25 @@
     "Birch Crossbow": {
       "category": "Equipment / Main Hand",
       "ask": 22000,
-      "bid": 19500,
+      "bid": 20000,
       "vendor": null
     },
     "Birch Fire Staff": {
       "category": "Equipment / Main Hand",
-      "ask": 24500,
-      "bid": 22000,
+      "ask": 24000,
+      "bid": 18000,
       "vendor": null
     },
     "Birch Log": {
       "category": "Resources",
-      "ask": 64,
+      "ask": 66,
       "bid": 62,
       "vendor": null
     },
     "Birch Lumber": {
       "category": "Resources",
       "ask": 760,
-      "bid": 720,
+      "bid": 740,
       "vendor": null
     },
     "Birch Nature Staff": {
@@ -640,18 +640,18 @@
     "Birch Shield": {
       "category": "Equipment / Off Hand",
       "ask": 17000,
-      "bid": 15000,
+      "bid": 14500,
       "vendor": null
     },
     "Birch Water Staff": {
       "category": "Equipment / Main Hand",
       "ask": 25000,
-      "bid": 22000,
+      "bid": 22500,
       "vendor": null
     },
     "Bishops Codex": {
       "category": "Equipment / Off Hand",
-      "ask": 105000000,
+      "ask": 100000000,
       "bid": 98000000,
       "vendor": null
     },
@@ -669,8 +669,8 @@
     },
     "Black Bear Fluff": {
       "category": "Resources",
-      "ask": 100000,
-      "bid": 98000,
+      "ask": 98000,
+      "bid": 96000,
       "vendor": null
     },
     "Black Bear Shoes": {
@@ -681,26 +681,26 @@
     },
     "Black Tea Leaf": {
       "category": "Resources",
-      "ask": 18,
-      "bid": 17,
+      "ask": 17,
+      "bid": 16,
       "vendor": null
     },
     "Blackberry": {
       "category": "Resources",
-      "ask": 135,
+      "ask": 130,
       "bid": 125,
       "vendor": null
     },
     "Blackberry Cake": {
       "category": "Consumables",
       "ask": 1050,
-      "bid": 980,
+      "bid": 1000,
       "vendor": null
     },
     "Blackberry Donut": {
       "category": "Consumables",
-      "ask": 820,
-      "bid": 760,
+      "ask": 800,
+      "bid": 780,
       "vendor": null
     },
     "Blazing Trident": {
@@ -717,7 +717,7 @@
     },
     "Blooming Trident": {
       "category": "Equipment / Main Hand",
-      "ask": 270000000,
+      "ask": 265000000,
       "bid": 260000000,
       "vendor": null
     },
@@ -735,25 +735,25 @@
     },
     "Blueberry": {
       "category": "Resources",
-      "ask": 86,
+      "ask": 78,
       "bid": 76,
       "vendor": null
     },
     "Blueberry Cake": {
       "category": "Consumables",
       "ask": 820,
-      "bid": 740,
+      "bid": 760,
       "vendor": null
     },
     "Blueberry Donut": {
       "category": "Consumables",
-      "ask": 740,
-      "bid": 680,
+      "ask": 680,
+      "bid": 660,
       "vendor": null
     },
     "Branch Of Insight": {
       "category": "Resources",
-      "ask": 26500000,
+      "ask": 27000000,
       "bid": 26000000,
       "vendor": null
     },
@@ -763,9 +763,15 @@
       "bid": null,
       "vendor": null
     },
+    "Brewers Top": {
+      "category": "Equipment / Body",
+      "ask": 180000000,
+      "bid": null,
+      "vendor": null
+    },
     "Brewing Essence": {
       "category": "Resources",
-      "ask": 205,
+      "ask": 210,
       "bid": 200,
       "vendor": null
     },
@@ -795,13 +801,13 @@
     },
     "Burble Brush": {
       "category": "Tools / Milking",
-      "ask": 145000,
-      "bid": 105000,
+      "ask": 130000,
+      "bid": 120000,
       "vendor": null
     },
     "Burble Buckler": {
       "category": "Equipment / Off Hand",
-      "ask": 110000,
+      "ask": 115000,
       "bid": 98000,
       "vendor": null
     },
@@ -819,44 +825,44 @@
     },
     "Burble Chisel": {
       "category": "Tools / Crafting",
-      "ask": 140000,
+      "ask": 135000,
       "bid": 120000,
       "vendor": null
     },
     "Burble Enhancer": {
       "category": "Tools / Enhancing",
       "ask": 140000,
-      "bid": 125000,
+      "bid": 120000,
       "vendor": null
     },
     "Burble Gauntlets": {
       "category": "Equipment / Hands",
       "ask": 78000,
-      "bid": 76000,
+      "bid": 74000,
       "vendor": null
     },
     "Burble Hammer": {
       "category": "Tools / Cheesesmithing",
       "ask": 135000,
-      "bid": 100000,
+      "bid": 105000,
       "vendor": null
     },
     "Burble Hatchet": {
       "category": "Tools / Woodcutting",
-      "ask": 130000,
-      "bid": 115000,
+      "ask": 125000,
+      "bid": 120000,
       "vendor": null
     },
     "Burble Helmet": {
       "category": "Equipment / Head",
       "ask": 98000,
-      "bid": 94000,
+      "bid": 92000,
       "vendor": null
     },
     "Burble Mace": {
       "category": "Equipment / Main Hand",
-      "ask": 155000,
-      "bid": 150000,
+      "ask": 150000,
+      "bid": 145000,
       "vendor": null
     },
     "Burble Milk": {
@@ -874,13 +880,13 @@
     "Burble Plate Body": {
       "category": "Equipment / Body",
       "ask": 150000,
-      "bid": 145000,
+      "bid": 140000,
       "vendor": null
     },
     "Burble Plate Legs": {
       "category": "Equipment / Legs",
-      "ask": 135000,
-      "bid": 130000,
+      "ask": 130000,
+      "bid": 125000,
       "vendor": null
     },
     "Burble Pot": {
@@ -891,26 +897,26 @@
     },
     "Burble Shears": {
       "category": "Tools / Foraging",
-      "ask": 135000,
+      "ask": 130000,
       "bid": 115000,
       "vendor": null
     },
     "Burble Spatula": {
       "category": "Tools / Cooking",
       "ask": 130000,
-      "bid": 125000,
+      "bid": 120000,
       "vendor": null
     },
     "Burble Spear": {
       "category": "Equipment / Main Hand",
       "ask": 155000,
-      "bid": 145000,
+      "bid": 150000,
       "vendor": null
     },
     "Burble Sword": {
       "category": "Equipment / Main Hand",
       "ask": 160000,
-      "bid": 150000,
+      "bid": 155000,
       "vendor": null
     },
     "Burble Tea Leaf": {
@@ -958,7 +964,7 @@
     "Cedar Bow": {
       "category": "Equipment / Two Hand",
       "ask": 110000,
-      "bid": 82000,
+      "bid": 84000,
       "vendor": null
     },
     "Cedar Crossbow": {
@@ -969,14 +975,14 @@
     },
     "Cedar Fire Staff": {
       "category": "Equipment / Main Hand",
-      "ask": 74000,
-      "bid": null,
+      "ask": 76000,
+      "bid": 50000,
       "vendor": null
     },
     "Cedar Log": {
       "category": "Resources",
-      "ask": 275,
-      "bid": 270,
+      "ask": 280,
+      "bid": 275,
       "vendor": null
     },
     "Cedar Lumber": {
@@ -993,14 +999,14 @@
     },
     "Cedar Shield": {
       "category": "Equipment / Off Hand",
-      "ask": 43000,
-      "bid": 38000,
+      "ask": 45000,
+      "bid": 37000,
       "vendor": null
     },
     "Cedar Water Staff": {
       "category": "Equipment / Main Hand",
       "ask": 76000,
-      "bid": 74000,
+      "bid": 72000,
       "vendor": null
     },
     "Celestial Alembic": {
@@ -1071,8 +1077,8 @@
     },
     "Centaur Hoof": {
       "category": "Resources",
-      "ask": 195000,
-      "bid": 190000,
+      "ask": 190000,
+      "bid": 185000,
       "vendor": null
     },
     "Channeling Coffee": {
@@ -1089,7 +1095,7 @@
     },
     "Chaotic Flail": {
       "category": "Equipment / Main Hand",
-      "ask": 255000000,
+      "ask": 250000000,
       "bid": 235000000,
       "vendor": null
     },
@@ -1120,7 +1126,7 @@
     "Cheese Brush": {
       "category": "Tools / Milking",
       "ask": 4800,
-      "bid": 2850,
+      "bid": 2900,
       "vendor": null
     },
     "Cheese Buckler": {
@@ -1138,12 +1144,12 @@
     "Cheese Chisel": {
       "category": "Tools / Crafting",
       "ask": 5000,
-      "bid": 4400,
+      "bid": 4500,
       "vendor": null
     },
     "Cheese Enhancer": {
       "category": "Tools / Enhancing",
-      "ask": 5200,
+      "ask": 5400,
       "bid": 3300,
       "vendor": null
     },
@@ -1174,19 +1180,19 @@
     "Cheese Mace": {
       "category": "Equipment / Main Hand",
       "ask": 5200,
-      "bid": 4800,
+      "bid": 4900,
       "vendor": null
     },
     "Cheese Needle": {
       "category": "Tools / Tailoring",
-      "ask": 5200,
+      "ask": 9800,
       "bid": 4800,
       "vendor": null
     },
     "Cheese Plate Body": {
       "category": "Equipment / Body",
       "ask": 9200,
-      "bid": 7400,
+      "bid": 6800,
       "vendor": null
     },
     "Cheese Plate Legs": {
@@ -1198,7 +1204,7 @@
     "Cheese Pot": {
       "category": "Tools / Brewing",
       "ask": 7600,
-      "bid": 4000,
+      "bid": 4100,
       "vendor": null
     },
     "Cheese Shears": {
@@ -1209,8 +1215,8 @@
     },
     "Cheese Spatula": {
       "category": "Tools / Cooking",
-      "ask": 5000,
-      "bid": null,
+      "ask": 4900,
+      "bid": 1300,
       "vendor": null
     },
     "Cheese Spear": {
@@ -1222,7 +1228,7 @@
     "Cheese Sword": {
       "category": "Equipment / Main Hand",
       "ask": 5200,
-      "bid": 4800,
+      "bid": 4900,
       "vendor": null
     },
     "Cheesemakers Bottoms": {
@@ -1240,7 +1246,7 @@
     "Cheesesmithing Tea": {
       "category": "Consumables",
       "ask": 1050,
-      "bid": 940,
+      "bid": 960,
       "vendor": null
     },
     "Chefs Bottoms": {
@@ -1281,31 +1287,31 @@
     },
     "Chrono Gloves": {
       "category": "Equipment / Hands",
-      "ask": 7200000,
-      "bid": 7000000,
+      "ask": 7400000,
+      "bid": 7200000,
       "vendor": null
     },
     "Chrono Sphere": {
       "category": "Resources",
-      "ask": 900000,
-      "bid": 880000,
+      "ask": 920000,
+      "bid": 900000,
       "vendor": null
     },
     "Cleave": {
       "category": "Books",
-      "ask": 35000,
+      "ask": 36000,
       "bid": 34000,
       "vendor": null
     },
     "Cocoon": {
       "category": "Resources",
-      "ask": 460,
-      "bid": 450,
+      "ask": 480,
+      "bid": 460,
       "vendor": null
     },
     "Collectors Boots": {
       "category": "Equipment / Feet",
-      "ask": 4600000,
+      "ask": 4700000,
       "bid": 4400000,
       "vendor": null
     },
@@ -1323,14 +1329,14 @@
     },
     "Colossus Plate Legs": {
       "category": "Equipment / Legs",
-      "ask": 6800000,
-      "bid": 6400000,
+      "ask": 7000000,
+      "bid": 6600000,
       "vendor": null
     },
     "Cooking Essence": {
       "category": "Resources",
       "ask": 360,
-      "bid": 340,
+      "bid": 330,
       "vendor": null
     },
     "Cooking Tea": {
@@ -1353,14 +1359,14 @@
     },
     "Cotton": {
       "category": "Resources",
-      "ask": 90,
+      "ask": 96,
       "bid": 78,
       "vendor": null
     },
     "Cotton Boots": {
       "category": "Equipment / Feet",
-      "ask": 5000,
-      "bid": 4800,
+      "ask": 5200,
+      "bid": 4700,
       "vendor": null
     },
     "Cotton Fabric": {
@@ -1371,32 +1377,38 @@
     },
     "Cotton Gloves": {
       "category": "Equipment / Hands",
-      "ask": 4900,
-      "bid": 4600,
+      "ask": 4800,
+      "bid": 4700,
       "vendor": null
     },
     "Cotton Hat": {
       "category": "Equipment / Head",
-      "ask": 4800,
+      "ask": 4900,
       "bid": 3900,
       "vendor": null
     },
     "Cotton Robe Bottoms": {
       "category": "Equipment / Legs",
-      "ask": 9000,
-      "bid": 8000,
+      "ask": 8800,
+      "bid": 7800,
       "vendor": null
     },
     "Cotton Robe Top": {
       "category": "Equipment / Body",
-      "ask": 9800,
-      "bid": 8200,
+      "ask": 9400,
+      "bid": 7600,
       "vendor": null
     },
     "Crab Pincer": {
       "category": "Resources",
-      "ask": 8800,
-      "bid": 8600,
+      "ask": 10500,
+      "bid": 8800,
+      "vendor": null
+    },
+    "Crafters Bottoms": {
+      "category": "Equipment / Legs",
+      "ask": 290000000,
+      "bid": null,
       "vendor": null
     },
     "Crafters Top": {
@@ -1407,8 +1419,8 @@
     },
     "Crafting Essence": {
       "category": "Resources",
-      "ask": 430,
-      "bid": 410,
+      "ask": 440,
+      "bid": 430,
       "vendor": null
     },
     "Crafting Tea": {
@@ -1426,48 +1438,48 @@
     "Crimson Boots": {
       "category": "Equipment / Feet",
       "ask": 160000,
-      "bid": 140000,
+      "bid": 155000,
       "vendor": null
     },
     "Crimson Brush": {
       "category": "Tools / Milking",
       "ask": 265000,
-      "bid": 235000,
+      "bid": 245000,
       "vendor": null
     },
     "Crimson Buckler": {
       "category": "Equipment / Off Hand",
       "ask": 230000,
-      "bid": 225000,
+      "bid": 220000,
       "vendor": null
     },
     "Crimson Bulwark": {
       "category": "Equipment / Two Hand",
       "ask": 295000,
-      "bid": 265000,
+      "bid": 260000,
       "vendor": null
     },
     "Crimson Cheese": {
       "category": "Resources",
-      "ask": 2200,
-      "bid": 2150,
+      "ask": 2150,
+      "bid": 2100,
       "vendor": null
     },
     "Crimson Chisel": {
       "category": "Tools / Crafting",
-      "ask": 300000,
-      "bid": 245000,
+      "ask": 270000,
+      "bid": 240000,
       "vendor": null
     },
     "Crimson Enhancer": {
       "category": "Tools / Enhancing",
-      "ask": 280000,
+      "ask": 260000,
       "bid": 255000,
       "vendor": null
     },
     "Crimson Gauntlets": {
       "category": "Equipment / Hands",
-      "ask": 140000,
+      "ask": 135000,
       "bid": 130000,
       "vendor": null
     },
@@ -1486,7 +1498,7 @@
     "Crimson Helmet": {
       "category": "Equipment / Head",
       "ask": 195000,
-      "bid": 185000,
+      "bid": 190000,
       "vendor": null
     },
     "Crimson Mace": {
@@ -1497,14 +1509,14 @@
     },
     "Crimson Milk": {
       "category": "Resources",
-      "ask": 500,
-      "bid": 490,
+      "ask": 490,
+      "bid": 480,
       "vendor": null
     },
     "Crimson Needle": {
       "category": "Tools / Tailoring",
       "ask": 265000,
-      "bid": 230000,
+      "bid": 235000,
       "vendor": null
     },
     "Crimson Plate Body": {
@@ -1521,26 +1533,26 @@
     },
     "Crimson Pot": {
       "category": "Tools / Brewing",
-      "ask": 250000,
-      "bid": 235000,
+      "ask": 265000,
+      "bid": 230000,
       "vendor": null
     },
     "Crimson Shears": {
       "category": "Tools / Foraging",
-      "ask": 410000,
-      "bid": 225000,
+      "ask": 430000,
+      "bid": 230000,
       "vendor": null
     },
     "Crimson Spatula": {
       "category": "Tools / Cooking",
-      "ask": 295000,
-      "bid": 245000,
+      "ask": 290000,
+      "bid": 240000,
       "vendor": null
     },
     "Crimson Spear": {
       "category": "Equipment / Main Hand",
-      "ask": 310000,
-      "bid": 300000,
+      "ask": 320000,
+      "bid": 310000,
       "vendor": null
     },
     "Crimson Sword": {
@@ -1617,7 +1629,7 @@
     },
     "Cupcake": {
       "category": "Consumables",
-      "ask": 410,
+      "ask": 370,
       "bid": 310,
       "vendor": null
     },
@@ -1659,8 +1671,8 @@
     },
     "Defense Coffee": {
       "category": "Consumables",
-      "ask": 1200,
-      "bid": 1100,
+      "ask": 1250,
+      "bid": 1200,
       "vendor": null
     },
     "Demonic Core": {
@@ -1672,13 +1684,13 @@
     "Demonic Plate Body": {
       "category": "Equipment / Body",
       "ask": 9200000,
-      "bid": 8200000,
+      "bid": 8600000,
       "vendor": null
     },
     "Demonic Plate Legs": {
       "category": "Equipment / Legs",
       "ask": 7400000,
-      "bid": 7000000,
+      "bid": 6400000,
       "vendor": null
     },
     "Dodocamel Gauntlets": {
@@ -1695,8 +1707,8 @@
     },
     "Donut": {
       "category": "Consumables",
-      "ask": 100,
-      "bid": 78,
+      "ask": 86,
+      "bid": 76,
       "vendor": null
     },
     "Dragon Fruit": {
@@ -1725,13 +1737,13 @@
     },
     "Earrings Of Critical Strike": {
       "category": "Jewelry",
-      "ask": 8200000,
-      "bid": 7400000,
+      "ask": 8000000,
+      "bid": 7200000,
       "vendor": null
     },
     "Earrings Of Essence Find": {
       "category": "Jewelry",
-      "ask": 6600000,
+      "ask": 6800000,
       "bid": 6000000,
       "vendor": null
     },
@@ -1743,13 +1755,13 @@
     },
     "Earrings Of Rare Find": {
       "category": "Jewelry",
-      "ask": 6800000,
+      "ask": 7000000,
       "bid": 6400000,
       "vendor": null
     },
     "Earrings Of Regeneration": {
       "category": "Jewelry",
-      "ask": 6600000,
+      "ask": 6800000,
       "bid": 6000000,
       "vendor": null
     },
@@ -1761,13 +1773,13 @@
     },
     "Efficiency Tea": {
       "category": "Consumables",
-      "ask": 2300,
-      "bid": 2200,
+      "ask": 2200,
+      "bid": 2150,
       "vendor": null
     },
     "Egg": {
       "category": "Resources",
-      "ask": 66,
+      "ask": 68,
       "bid": 64,
       "vendor": null
     },
@@ -1779,8 +1791,8 @@
     },
     "Elusiveness": {
       "category": "Books",
-      "ask": 96000,
-      "bid": 94000,
+      "ask": 98000,
+      "bid": 96000,
       "vendor": null
     },
     "Emp Tea Leaf": {
@@ -1803,13 +1815,13 @@
     },
     "Enchanted Essence": {
       "category": "Resources",
-      "ask": 1500,
-      "bid": 1450,
+      "ask": 1550,
+      "bid": 1500,
       "vendor": null
     },
     "Enchanted Gloves": {
       "category": "Equipment / Hands",
-      "ask": 8800000,
+      "ask": 8600000,
       "bid": 7800000,
       "vendor": null
     },
@@ -1840,13 +1852,13 @@
     "Enhancing Tea": {
       "category": "Consumables",
       "ask": 1650,
-      "bid": 1400,
+      "bid": 1450,
       "vendor": null
     },
     "Entangle": {
       "category": "Books",
-      "ask": 28000,
-      "bid": 27500,
+      "ask": 29000,
+      "bid": 28000,
       "vendor": null
     },
     "Excelsa Coffee Bean": {
@@ -1870,7 +1882,7 @@
     "Expert Brewing Charm": {
       "category": "Resources",
       "ask": 140000000,
-      "bid": 72000000,
+      "bid": 74000000,
       "vendor": null
     },
     "Expert Cheesesmithing Charm": {
@@ -1929,7 +1941,7 @@
     },
     "Expert Milking Charm": {
       "category": "Resources",
-      "ask": 140000000,
+      "ask": 135000000,
       "bid": 80000000,
       "vendor": null
     },
@@ -1941,7 +1953,7 @@
     },
     "Expert Stamina Charm": {
       "category": "Resources",
-      "ask": 68000000,
+      "ask": 66000000,
       "bid": 41000000,
       "vendor": null
     },
@@ -1965,7 +1977,7 @@
     },
     "Eye Watch": {
       "category": "Trinket",
-      "ask": 9000000,
+      "ask": 8600000,
       "bid": 8000000,
       "vendor": null
     },
@@ -1989,7 +2001,7 @@
     },
     "Fighter Necklace": {
       "category": "Jewelry",
-      "ask": 11500000,
+      "ask": 12500000,
       "bid": 11000000,
       "vendor": null
     },
@@ -2001,7 +2013,7 @@
     },
     "Firestorm": {
       "category": "Books",
-      "ask": 180000,
+      "ask": 175000,
       "bid": 170000,
       "vendor": null
     },
@@ -2019,31 +2031,31 @@
     },
     "Flaming Cloth": {
       "category": "Resources",
-      "ask": 66000,
-      "bid": 64000,
+      "ask": 64000,
+      "bid": 62000,
       "vendor": null
     },
     "Flaming Robe Bottoms": {
       "category": "Equipment / Legs",
-      "ask": 320000,
+      "ask": 330000,
       "bid": 245000,
       "vendor": null
     },
     "Flaming Robe Top": {
       "category": "Equipment / Body",
-      "ask": 320000,
+      "ask": 310000,
       "bid": 290000,
       "vendor": null
     },
     "Flax": {
       "category": "Resources",
-      "ask": 135,
+      "ask": 150,
       "bid": 130,
       "vendor": null
     },
     "Fluffy Red Hat": {
       "category": "Equipment / Head",
-      "ask": 5800000,
+      "ask": 5600000,
       "bid": 5400000,
       "vendor": null
     },
@@ -2085,7 +2097,7 @@
     },
     "Frost Staff": {
       "category": "Equipment / Main Hand",
-      "ask": 11500000,
+      "ask": 12500000,
       "bid": 11000000,
       "vendor": null
     },
@@ -2098,7 +2110,7 @@
     "Furious Spear": {
       "category": "Equipment / Main Hand",
       "ask": 265000000,
-      "bid": 255000000,
+      "bid": 260000000,
       "vendor": null
     },
     "Furious Spear Refined": {
@@ -2133,26 +2145,26 @@
     },
     "Ginkgo Bow": {
       "category": "Equipment / Two Hand",
-      "ask": 490000,
-      "bid": 460000,
+      "ask": 470000,
+      "bid": 450000,
       "vendor": null
     },
     "Ginkgo Crossbow": {
       "category": "Equipment / Main Hand",
-      "ask": 350000,
-      "bid": 320000,
+      "ask": 360000,
+      "bid": 310000,
       "vendor": null
     },
     "Ginkgo Fire Staff": {
       "category": "Equipment / Main Hand",
       "ask": 380000,
-      "bid": 340000,
+      "bid": 350000,
       "vendor": null
     },
     "Ginkgo Log": {
       "category": "Resources",
       "ask": 480,
-      "bid": 460,
+      "bid": 470,
       "vendor": null
     },
     "Ginkgo Lumber": {
@@ -2163,8 +2175,8 @@
     },
     "Ginkgo Nature Staff": {
       "category": "Equipment / Main Hand",
-      "ask": 360000,
-      "bid": 350000,
+      "ask": 370000,
+      "bid": 340000,
       "vendor": null
     },
     "Ginkgo Shield": {
@@ -2175,13 +2187,13 @@
     },
     "Ginkgo Water Staff": {
       "category": "Equipment / Main Hand",
-      "ask": 400000,
+      "ask": 370000,
       "bid": 340000,
       "vendor": null
     },
     "Gluttonous Energy": {
       "category": "Resources",
-      "ask": 17000000,
+      "ask": 16500000,
       "bid": 13500000,
       "vendor": null
     },
@@ -2199,19 +2211,19 @@
     },
     "Gobo Boots": {
       "category": "Equipment / Feet",
-      "ask": 56000,
+      "ask": 58000,
       "bid": 54000,
       "vendor": null
     },
     "Gobo Bracers": {
       "category": "Equipment / Hands",
-      "ask": 60000,
+      "ask": 64000,
       "bid": 56000,
       "vendor": null
     },
     "Gobo Chaps": {
       "category": "Equipment / Legs",
-      "ask": 100000,
+      "ask": 98000,
       "bid": 92000,
       "vendor": null
     },
@@ -2223,19 +2235,19 @@
     },
     "Gobo Essence": {
       "category": "Resources",
-      "ask": 110,
-      "bid": 100,
+      "ask": 100,
+      "bid": 98,
       "vendor": null
     },
     "Gobo Hide": {
       "category": "Resources",
-      "ask": 35,
-      "bid": 32,
+      "ask": 34,
+      "bid": 29,
       "vendor": null
     },
     "Gobo Hood": {
       "category": "Equipment / Head",
-      "ask": 72000,
+      "ask": 70000,
       "bid": 68000,
       "vendor": null
     },
@@ -2277,8 +2289,8 @@
     },
     "Gobo Tunic": {
       "category": "Equipment / Body",
-      "ask": 120000,
-      "bid": 100000,
+      "ask": 105000,
+      "bid": 96000,
       "vendor": null
     },
     "Goggles": {
@@ -2295,7 +2307,7 @@
     },
     "Gourmet Tea": {
       "category": "Consumables",
-      "ask": 1150,
+      "ask": 1250,
       "bid": 1050,
       "vendor": null
     },
@@ -2337,7 +2349,7 @@
     },
     "Griffin Bulwark": {
       "category": "Equipment / Two Hand",
-      "ask": 215000000,
+      "ask": 220000000,
       "bid": 210000000,
       "vendor": null
     },
@@ -2361,7 +2373,7 @@
     },
     "Griffin Talon": {
       "category": "Resources",
-      "ask": 7400000,
+      "ask": 7600000,
       "bid": 7200000,
       "vendor": null
     },
@@ -2392,7 +2404,7 @@
     "Gummy": {
       "category": "Consumables",
       "ask": 76,
-      "bid": 66,
+      "bid": 64,
       "vendor": null
     },
     "Guzzling Energy": {
@@ -2415,19 +2427,19 @@
     },
     "Holy Alembic": {
       "category": "Tools / Alchemy",
-      "ask": 880000,
+      "ask": 900000,
       "bid": 840000,
       "vendor": null
     },
     "Holy Boots": {
       "category": "Equipment / Feet",
-      "ask": 420000,
+      "ask": 410000,
       "bid": 360000,
       "vendor": null
     },
     "Holy Brush": {
       "category": "Tools / Milking",
-      "ask": 920000,
+      "ask": 940000,
       "bid": 900000,
       "vendor": null
     },
@@ -2458,13 +2470,13 @@
     "Holy Enhancer": {
       "category": "Tools / Enhancing",
       "ask": 980000,
-      "bid": 960000,
+      "bid": 940000,
       "vendor": null
     },
     "Holy Gauntlets": {
       "category": "Equipment / Hands",
       "ask": 580000,
-      "bid": 460000,
+      "bid": 370000,
       "vendor": null
     },
     "Holy Hammer": {
@@ -2481,7 +2493,7 @@
     },
     "Holy Helmet": {
       "category": "Equipment / Head",
-      "ask": 700000,
+      "ask": 680000,
       "bid": 640000,
       "vendor": null
     },
@@ -2505,14 +2517,14 @@
     },
     "Holy Plate Body": {
       "category": "Equipment / Body",
-      "ask": 1150000,
+      "ask": 1100000,
       "bid": 1050000,
       "vendor": null
     },
     "Holy Plate Legs": {
       "category": "Equipment / Legs",
-      "ask": 920000,
-      "bid": 880000,
+      "ask": 900000,
+      "bid": 840000,
       "vendor": null
     },
     "Holy Pot": {
@@ -2524,24 +2536,24 @@
     "Holy Shears": {
       "category": "Tools / Foraging",
       "ask": 960000,
-      "bid": 900000,
+      "bid": 920000,
       "vendor": null
     },
     "Holy Spatula": {
       "category": "Tools / Cooking",
-      "ask": 980000,
-      "bid": 840000,
+      "ask": 920000,
+      "bid": 860000,
       "vendor": null
     },
     "Holy Spear": {
       "category": "Equipment / Main Hand",
-      "ask": 1150000,
-      "bid": 1100000,
+      "ask": 1200000,
+      "bid": 1150000,
       "vendor": null
     },
     "Holy Sword": {
       "category": "Equipment / Main Hand",
-      "ask": 1150000,
+      "ask": 1200000,
       "bid": 1100000,
       "vendor": null
     },
@@ -2577,8 +2589,8 @@
     },
     "Infernal Battlestaff": {
       "category": "Equipment / Main Hand",
-      "ask": 12000000,
-      "bid": 11000000,
+      "ask": 15000000,
+      "bid": 11500000,
       "vendor": null
     },
     "Infernal Ember": {
@@ -2589,8 +2601,8 @@
     },
     "Insanity": {
       "category": "Books",
-      "ask": 880000,
-      "bid": 860000,
+      "ask": 860000,
+      "bid": 840000,
       "vendor": null
     },
     "Intelligence Coffee": {
@@ -2626,12 +2638,12 @@
     "Jungle Essence": {
       "category": "Resources",
       "ask": 41,
-      "bid": 37,
+      "bid": 38,
       "vendor": null
     },
     "Knights Aegis": {
       "category": "Equipment / Off Hand",
-      "ask": 100000000,
+      "ask": 105000000,
       "bid": 98000000,
       "vendor": null
     },
@@ -2661,14 +2673,14 @@
     },
     "Kraken Tunic": {
       "category": "Equipment / Body",
-      "ask": 100000000,
+      "ask": 105000000,
       "bid": 98000000,
       "vendor": null
     },
     "Large Pouch": {
       "category": "Equipment / Pouch",
-      "ask": 900000,
-      "bid": 840000,
+      "ask": null,
+      "bid": 800000,
       "vendor": null
     },
     "Liberica Coffee Bean": {
@@ -2679,13 +2691,13 @@
     },
     "Life Drain": {
       "category": "Books",
-      "ask": 47000,
-      "bid": 44000,
+      "ask": 46000,
+      "bid": 45000,
       "vendor": null
     },
     "Linen Boots": {
       "category": "Equipment / Feet",
-      "ask": 24000,
+      "ask": 27000,
       "bid": 21000,
       "vendor": null
     },
@@ -2697,26 +2709,26 @@
     },
     "Linen Gloves": {
       "category": "Equipment / Hands",
-      "ask": 25000,
-      "bid": 21500,
+      "ask": 24000,
+      "bid": 21000,
       "vendor": null
     },
     "Linen Hat": {
       "category": "Equipment / Head",
-      "ask": 28500,
+      "ask": 29000,
       "bid": 24000,
       "vendor": null
     },
     "Linen Robe Bottoms": {
       "category": "Equipment / Legs",
       "ask": 40000,
-      "bid": 37000,
+      "bid": 36000,
       "vendor": null
     },
     "Linen Robe Top": {
       "category": "Equipment / Body",
-      "ask": 49000,
-      "bid": 35000,
+      "ask": 45000,
+      "bid": 40000,
       "vendor": null
     },
     "Living Granite": {
@@ -2727,14 +2739,14 @@
     },
     "Log": {
       "category": "Resources",
-      "ask": 39,
-      "bid": 35,
+      "ask": 37,
+      "bid": 36,
       "vendor": null
     },
     "Lucky Coffee": {
       "category": "Consumables",
-      "ask": 3300,
-      "bid": 3200,
+      "ask": 3200,
+      "bid": 3100,
       "vendor": null
     },
     "Lumber": {
@@ -2763,13 +2775,13 @@
     },
     "Luna Robe Top": {
       "category": "Equipment / Body",
-      "ask": 2450000,
+      "ask": 2400000,
       "bid": 2100000,
       "vendor": null
     },
     "Luna Wing": {
       "category": "Resources",
-      "ask": 265000,
+      "ask": 270000,
       "bid": 260000,
       "vendor": null
     },
@@ -2781,8 +2793,8 @@
     },
     "Maelstrom Plate Legs": {
       "category": "Equipment / Legs",
-      "ask": 84000000,
-      "bid": 74000000,
+      "ask": 88000000,
+      "bid": 76000000,
       "vendor": null
     },
     "Maelstrom Plating": {
@@ -2793,25 +2805,25 @@
     },
     "Magic Coffee": {
       "category": "Consumables",
-      "ask": 1700,
-      "bid": 1650,
+      "ask": 1650,
+      "bid": 1600,
       "vendor": null
     },
     "Magicians Cloth": {
       "category": "Resources",
-      "ask": 7600000,
-      "bid": 7400000,
+      "ask": 7800000,
+      "bid": 7600000,
       "vendor": null
     },
     "Magicians Hat": {
       "category": "Equipment / Head",
-      "ask": 80000000,
-      "bid": 76000000,
+      "ask": 82000000,
+      "bid": 78000000,
       "vendor": null
     },
     "Magnet": {
       "category": "Resources",
-      "ask": 255000,
+      "ask": 260000,
       "bid": 250000,
       "vendor": null
     },
@@ -2859,7 +2871,7 @@
     },
     "Marine Scale": {
       "category": "Resources",
-      "ask": 72000,
+      "ask": 74000,
       "bid": 70000,
       "vendor": null
     },
@@ -2871,7 +2883,7 @@
     },
     "Marksman Bracers": {
       "category": "Equipment / Hands",
-      "ask": 100000000,
+      "ask": 105000000,
       "bid": 98000000,
       "vendor": null
     },
@@ -2929,6 +2941,12 @@
       "bid": 240000000,
       "vendor": null
     },
+    "Master Intelligence Charm": {
+      "category": "Unknown",
+      "ask": 250000000,
+      "bid": null,
+      "vendor": null
+    },
     "Master Magic Charm": {
       "category": "Resources",
       "ask": 225000000,
@@ -2962,7 +2980,7 @@
     "Medium Pouch": {
       "category": "Equipment / Pouch",
       "ask": 190000,
-      "bid": 180000,
+      "bid": 185000,
       "vendor": null
     },
     "Melee Coffee": {
@@ -3004,7 +3022,7 @@
     "Mooberry": {
       "category": "Resources",
       "ask": 230,
-      "bid": 220,
+      "bid": 225,
       "vendor": null
     },
     "Mooberry Cake": {
@@ -3015,8 +3033,8 @@
     },
     "Mooberry Donut": {
       "category": "Consumables",
-      "ask": 1400,
-      "bid": 1050,
+      "ask": 1300,
+      "bid": 1200,
       "vendor": null
     },
     "Moolong Tea Leaf": {
@@ -3045,20 +3063,20 @@
     },
     "Necklace Of Efficiency": {
       "category": "Jewelry",
-      "ask": 12500000,
+      "ask": 12000000,
       "bid": 10500000,
       "vendor": null
     },
     "Necklace Of Speed": {
       "category": "Jewelry",
-      "ask": 14000000,
+      "ask": 14500000,
       "bid": 13500000,
       "vendor": null
     },
     "Necklace Of Wisdom": {
       "category": "Jewelry",
       "ask": 12000000,
-      "bid": 11000000,
+      "bid": 11500000,
       "vendor": null
     },
     "Orange": {
@@ -3069,8 +3087,8 @@
     },
     "Orange Gummy": {
       "category": "Consumables",
-      "ask": 82,
-      "bid": 74,
+      "ask": 78,
+      "bid": 76,
       "vendor": null
     },
     "Orange Key Fragment": {
@@ -3081,7 +3099,7 @@
     },
     "Orange Yogurt": {
       "category": "Consumables",
-      "ask": 880,
+      "ask": 860,
       "bid": 760,
       "vendor": null
     },
@@ -3099,14 +3117,14 @@
     },
     "Peach": {
       "category": "Resources",
-      "ask": 140,
-      "bid": 135,
+      "ask": 145,
+      "bid": 140,
       "vendor": null
     },
     "Peach Gummy": {
       "category": "Consumables",
-      "ask": 960,
-      "bid": 920,
+      "ask": 980,
+      "bid": 940,
       "vendor": null
     },
     "Peach Yogurt": {
@@ -3135,8 +3153,8 @@
     },
     "Pestilent Shot": {
       "category": "Books",
-      "ask": 60000,
-      "bid": 58000,
+      "ask": 58000,
+      "bid": 56000,
       "vendor": null
     },
     "Philosophers Earrings": {
@@ -3159,7 +3177,7 @@
     },
     "Philosophers Ring": {
       "category": "Jewelry",
-      "ask": null,
+      "ask": 680000000,
       "bid": 660000000,
       "vendor": null
     },
@@ -3171,7 +3189,7 @@
     },
     "Pincer Gloves": {
       "category": "Equipment / Hands",
-      "ask": 33000,
+      "ask": 34000,
       "bid": 28500,
       "vendor": null
     },
@@ -3201,8 +3219,8 @@
     },
     "Plum": {
       "category": "Resources",
-      "ask": 32,
-      "bid": 30,
+      "ask": 30,
+      "bid": 29,
       "vendor": null
     },
     "Plum Gummy": {
@@ -3214,12 +3232,12 @@
     "Plum Yogurt": {
       "category": "Consumables",
       "ask": 1000,
-      "bid": 940,
+      "bid": 960,
       "vendor": null
     },
     "Poke": {
       "category": "Books",
-      "ask": 3100,
+      "ask": 2700,
       "bid": 2600,
       "vendor": null
     },
@@ -3243,14 +3261,14 @@
     },
     "Prime Catalyst": {
       "category": "Resources",
-      "ask": 195000,
+      "ask": 200000,
       "bid": 190000,
       "vendor": null
     },
     "Processing Tea": {
       "category": "Consumables",
-      "ask": 3500,
-      "bid": 3200,
+      "ask": 3700,
+      "bid": 3300,
       "vendor": null
     },
     "Provoke": {
@@ -3273,49 +3291,49 @@
     },
     "Purpleheart Bow": {
       "category": "Equipment / Two Hand",
-      "ask": 215000,
-      "bid": 205000,
+      "ask": 230000,
+      "bid": 215000,
       "vendor": null
     },
     "Purpleheart Crossbow": {
       "category": "Equipment / Main Hand",
-      "ask": 155000,
-      "bid": 130000,
+      "ask": 150000,
+      "bid": 125000,
       "vendor": null
     },
     "Purpleheart Fire Staff": {
       "category": "Equipment / Main Hand",
-      "ask": 180000,
+      "ask": 190000,
       "bid": 165000,
       "vendor": null
     },
     "Purpleheart Log": {
       "category": "Resources",
-      "ask": 370,
-      "bid": 350,
+      "ask": 380,
+      "bid": 360,
       "vendor": null
     },
     "Purpleheart Lumber": {
       "category": "Resources",
-      "ask": 1850,
-      "bid": 1800,
+      "ask": 1900,
+      "bid": 1850,
       "vendor": null
     },
     "Purpleheart Nature Staff": {
       "category": "Equipment / Main Hand",
-      "ask": 185000,
-      "bid": 160000,
+      "ask": 175000,
+      "bid": 155000,
       "vendor": null
     },
     "Purpleheart Shield": {
       "category": "Equipment / Off Hand",
-      "ask": 82000,
-      "bid": 78000,
+      "ask": 80000,
+      "bid": 76000,
       "vendor": null
     },
     "Purpleheart Water Staff": {
       "category": "Equipment / Main Hand",
-      "ask": 185000,
+      "ask": 175000,
       "bid": 105000,
       "vendor": null
     },
@@ -3327,13 +3345,13 @@
     },
     "Quick Shot": {
       "category": "Books",
-      "ask": 2650,
+      "ask": 2750,
       "bid": 2550,
       "vendor": null
     },
     "Radiant Boots": {
       "category": "Equipment / Feet",
-      "ask": 285000,
+      "ask": 290000,
       "bid": 280000,
       "vendor": null
     },
@@ -3351,13 +3369,13 @@
     },
     "Radiant Gloves": {
       "category": "Equipment / Hands",
-      "ask": 280000,
+      "ask": 285000,
       "bid": 275000,
       "vendor": null
     },
     "Radiant Hat": {
       "category": "Equipment / Head",
-      "ask": 520000,
+      "ask": 490000,
       "bid": 470000,
       "vendor": null
     },
@@ -3375,19 +3393,19 @@
     },
     "Rain Of Arrows": {
       "category": "Books",
-      "ask": 205000,
+      "ask": 210000,
       "bid": 200000,
       "vendor": null
     },
     "Rainbow Alembic": {
       "category": "Tools / Alchemy",
-      "ask": 480000,
-      "bid": 440000,
+      "ask": 460000,
+      "bid": 430000,
       "vendor": null
     },
     "Rainbow Boots": {
       "category": "Equipment / Feet",
-      "ask": 285000,
+      "ask": 260000,
       "bid": 230000,
       "vendor": null
     },
@@ -3399,7 +3417,7 @@
     },
     "Rainbow Buckler": {
       "category": "Equipment / Off Hand",
-      "ask": 430000,
+      "ask": 420000,
       "bid": 400000,
       "vendor": null
     },
@@ -3412,43 +3430,43 @@
     "Rainbow Cheese": {
       "category": "Resources",
       "ask": 2650,
-      "bid": 2550,
+      "bid": 2600,
       "vendor": null
     },
     "Rainbow Chisel": {
       "category": "Tools / Crafting",
-      "ask": 450000,
-      "bid": 440000,
+      "ask": 520000,
+      "bid": 450000,
       "vendor": null
     },
     "Rainbow Enhancer": {
       "category": "Tools / Enhancing",
-      "ask": 500000,
-      "bid": 480000,
+      "ask": 520000,
+      "bid": 500000,
       "vendor": null
     },
     "Rainbow Gauntlets": {
       "category": "Equipment / Hands",
-      "ask": 280000,
+      "ask": 295000,
       "bid": 270000,
       "vendor": null
     },
     "Rainbow Hammer": {
       "category": "Tools / Cheesesmithing",
-      "ask": 460000,
-      "bid": 430000,
+      "ask": 450000,
+      "bid": 420000,
       "vendor": null
     },
     "Rainbow Hatchet": {
       "category": "Tools / Woodcutting",
       "ask": 470000,
-      "bid": 420000,
+      "bid": 430000,
       "vendor": null
     },
     "Rainbow Helmet": {
       "category": "Equipment / Head",
-      "ask": 360000,
-      "bid": 320000,
+      "ask": 370000,
+      "bid": 330000,
       "vendor": null
     },
     "Rainbow Mace": {
@@ -3465,7 +3483,7 @@
     },
     "Rainbow Needle": {
       "category": "Tools / Tailoring",
-      "ask": 580000,
+      "ask": 490000,
       "bid": 430000,
       "vendor": null
     },
@@ -3483,19 +3501,19 @@
     },
     "Rainbow Pot": {
       "category": "Tools / Brewing",
-      "ask": 520000,
+      "ask": 480000,
       "bid": 400000,
       "vendor": null
     },
     "Rainbow Shears": {
       "category": "Tools / Foraging",
       "ask": 500000,
-      "bid": 460000,
+      "bid": 450000,
       "vendor": null
     },
     "Rainbow Spatula": {
       "category": "Tools / Cooking",
-      "ask": 520000,
+      "ask": 490000,
       "bid": 460000,
       "vendor": null
     },
@@ -3507,8 +3525,8 @@
     },
     "Rainbow Sword": {
       "category": "Equipment / Main Hand",
-      "ask": 640000,
-      "bid": 620000,
+      "ask": 620000,
+      "bid": 580000,
       "vendor": null
     },
     "Ranged Coffee": {
@@ -3520,13 +3538,13 @@
     "Ranger Necklace": {
       "category": "Jewelry",
       "ask": 12000000,
-      "bid": 11000000,
+      "bid": 10500000,
       "vendor": null
     },
     "Red Culinary Hat": {
       "category": "Equipment / Head",
-      "ask": 5600000,
-      "bid": 5200000,
+      "ask": 5800000,
+      "bid": 5000000,
       "vendor": null
     },
     "Red Panda Fluff": {
@@ -3549,7 +3567,7 @@
     },
     "Redwood Crossbow": {
       "category": "Equipment / Main Hand",
-      "ask": 660000,
+      "ask": 680000,
       "bid": 600000,
       "vendor": null
     },
@@ -3561,8 +3579,8 @@
     },
     "Redwood Log": {
       "category": "Resources",
-      "ask": 560,
-      "bid": 540,
+      "ask": 580,
+      "bid": 560,
       "vendor": null
     },
     "Redwood Lumber": {
@@ -3580,7 +3598,7 @@
     "Redwood Shield": {
       "category": "Equipment / Off Hand",
       "ask": 350000,
-      "bid": 320000,
+      "bid": 330000,
       "vendor": null
     },
     "Redwood Water Staff": {
@@ -3615,14 +3633,14 @@
     },
     "Reptile Boots": {
       "category": "Equipment / Feet",
-      "ask": 25000,
+      "ask": 24000,
       "bid": 19000,
       "vendor": null
     },
     "Reptile Bracers": {
       "category": "Equipment / Hands",
       "ask": 21500,
-      "bid": 21000,
+      "bid": 20500,
       "vendor": null
     },
     "Reptile Chaps": {
@@ -3633,8 +3651,8 @@
     },
     "Reptile Hide": {
       "category": "Resources",
-      "ask": 90,
-      "bid": 86,
+      "ask": 94,
+      "bid": 88,
       "vendor": null
     },
     "Reptile Hood": {
@@ -3651,8 +3669,8 @@
     },
     "Reptile Tunic": {
       "category": "Equipment / Body",
-      "ask": 41000,
-      "bid": 39000,
+      "ask": 42000,
+      "bid": 38000,
       "vendor": null
     },
     "Retribution": {
@@ -3663,8 +3681,8 @@
     },
     "Revenant Anima": {
       "category": "Resources",
-      "ask": 940000,
-      "bid": 920000,
+      "ask": 920000,
+      "bid": 900000,
       "vendor": null
     },
     "Revenant Chaps": {
@@ -3675,8 +3693,8 @@
     },
     "Revenant Tunic": {
       "category": "Equipment / Body",
-      "ask": 9800000,
-      "bid": 8600000,
+      "ask": 9400000,
+      "bid": 8800000,
       "vendor": null
     },
     "Revive": {
@@ -3700,24 +3718,24 @@
     "Ring Of Essence Find": {
       "category": "Jewelry",
       "ask": 6800000,
-      "bid": 6600000,
+      "bid": 6400000,
       "vendor": null
     },
     "Ring Of Gathering": {
       "category": "Jewelry",
-      "ask": 7000000,
+      "ask": 6800000,
       "bid": 6200000,
       "vendor": null
     },
     "Ring Of Rare Find": {
       "category": "Jewelry",
-      "ask": 7600000,
+      "ask": 7200000,
       "bid": 6600000,
       "vendor": null
     },
     "Ring Of Regeneration": {
       "category": "Jewelry",
-      "ask": 6800000,
+      "ask": 7000000,
       "bid": 6600000,
       "vendor": null
     },
@@ -3753,20 +3771,20 @@
     },
     "Rough Bracers": {
       "category": "Equipment / Hands",
-      "ask": 6000,
-      "bid": 4900,
+      "ask": 5600,
+      "bid": 5000,
       "vendor": null
     },
     "Rough Chaps": {
       "category": "Equipment / Legs",
-      "ask": 11500,
-      "bid": 7000,
+      "ask": 11000,
+      "bid": 6800,
       "vendor": null
     },
     "Rough Hide": {
       "category": "Resources",
-      "ask": 180,
-      "bid": 170,
+      "ask": 185,
+      "bid": 165,
       "vendor": null
     },
     "Rough Hood": {
@@ -3777,19 +3795,19 @@
     },
     "Rough Leather": {
       "category": "Resources",
-      "ask": 740,
+      "ask": 760,
       "bid": 720,
       "vendor": null
     },
     "Rough Tunic": {
       "category": "Equipment / Body",
-      "ask": 21000,
+      "ask": 20000,
       "bid": 10500,
       "vendor": null
     },
     "Royal Cloth": {
       "category": "Resources",
-      "ask": 7800000,
+      "ask": 8000000,
       "bid": 7600000,
       "vendor": null
     },
@@ -3801,7 +3819,7 @@
     },
     "Royal Fire Robe Top": {
       "category": "Equipment / Body",
-      "ask": 92000000,
+      "ask": 96000000,
       "bid": 88000000,
       "vendor": null
     },
@@ -3831,7 +3849,7 @@
     },
     "Scratch": {
       "category": "Books",
-      "ask": 5400,
+      "ask": 4000,
       "bid": 2900,
       "vendor": null
     },
@@ -3849,8 +3867,8 @@
     },
     "Shoebill Feather": {
       "category": "Resources",
-      "ask": 135000,
-      "bid": 130000,
+      "ask": 145000,
+      "bid": 135000,
       "vendor": null
     },
     "Shoebill Shoes": {
@@ -3862,7 +3880,7 @@
     "Sighted Bracers": {
       "category": "Equipment / Hands",
       "ask": 1900000,
-      "bid": 1800000,
+      "bid": 1850000,
       "vendor": null
     },
     "Silencing Shot": {
@@ -3873,8 +3891,8 @@
     },
     "Silk Boots": {
       "category": "Equipment / Feet",
-      "ask": 170000,
-      "bid": 165000,
+      "ask": 165000,
+      "bid": 160000,
       "vendor": null
     },
     "Silk Fabric": {
@@ -3885,7 +3903,7 @@
     },
     "Silk Gloves": {
       "category": "Equipment / Hands",
-      "ask": 165000,
+      "ask": 160000,
       "bid": 155000,
       "vendor": null
     },
@@ -3903,8 +3921,8 @@
     },
     "Silk Robe Top": {
       "category": "Equipment / Body",
-      "ask": 330000,
-      "bid": 310000,
+      "ask": 340000,
+      "bid": 295000,
       "vendor": null
     },
     "Sinister Chest Key": {
@@ -3916,7 +3934,7 @@
     "Sinister Entry Key": {
       "category": "Keys",
       "ask": 740000,
-      "bid": 720000,
+      "bid": 700000,
       "vendor": null
     },
     "Sinister Essence": {
@@ -3928,19 +3946,19 @@
     "Sinister Refinement Shard": {
       "category": "Unknown",
       "ask": 2850000,
-      "bid": 2800000,
+      "bid": 2750000,
       "vendor": null
     },
     "Smack": {
       "category": "Books",
-      "ask": 2650,
+      "ask": 2700,
       "bid": 2600,
       "vendor": null
     },
     "Small Pouch": {
       "category": "Equipment / Pouch",
-      "ask": 38000,
-      "bid": 28000,
+      "ask": 39000,
+      "bid": 27500,
       "vendor": null
     },
     "Smoke Burst": {
@@ -4005,8 +4023,8 @@
     },
     "Spaceberry": {
       "category": "Resources",
-      "ask": 230,
-      "bid": 225,
+      "ask": 235,
+      "bid": 230,
       "vendor": null
     },
     "Spaceberry Cake": {
@@ -4023,8 +4041,8 @@
     },
     "Spacia Coffee Bean": {
       "category": "Resources",
-      "ask": 1650,
-      "bid": 1600,
+      "ask": 1600,
+      "bid": 1550,
       "vendor": null
     },
     "Speed Aura": {
@@ -4042,25 +4060,25 @@
     "Spiked Bulwark": {
       "category": "Equipment / Two Hand",
       "ask": 14500000,
-      "bid": 11000000,
+      "bid": 11500000,
       "vendor": null
     },
     "Stalactite Shard": {
       "category": "Resources",
-      "ask": 580000,
-      "bid": 560000,
+      "ask": 640000,
+      "bid": 580000,
       "vendor": null
     },
     "Stalactite Spear": {
       "category": "Equipment / Main Hand",
-      "ask": 12500000,
+      "ask": 13000000,
       "bid": 10500000,
       "vendor": null
     },
     "Stamina Coffee": {
       "category": "Consumables",
-      "ask": 880,
-      "bid": 800,
+      "ask": 860,
+      "bid": 820,
       "vendor": null
     },
     "Star Fragment": {
@@ -4101,7 +4119,7 @@
     },
     "Strawberry": {
       "category": "Resources",
-      "ask": 170,
+      "ask": 175,
       "bid": 160,
       "vendor": null
     },
@@ -4114,7 +4132,7 @@
     "Strawberry Donut": {
       "category": "Consumables",
       "ask": 960,
-      "bid": 860,
+      "bid": 920,
       "vendor": null
     },
     "Stunning Blow": {
@@ -4185,7 +4203,7 @@
     },
     "Super Crafting Tea": {
       "category": "Consumables",
-      "ask": 5400,
+      "ask": 5600,
       "bid": 4500,
       "vendor": null
     },
@@ -4204,7 +4222,7 @@
     "Super Foraging Tea": {
       "category": "Consumables",
       "ask": 3100,
-      "bid": 3000,
+      "bid": 2950,
       "vendor": null
     },
     "Super Intelligence Coffee": {
@@ -4269,8 +4287,8 @@
     },
     "Swiftness Coffee": {
       "category": "Consumables",
-      "ask": 4100,
-      "bid": 4000,
+      "ask": 4000,
+      "bid": 3900,
       "vendor": null
     },
     "Tailoring Essence": {
@@ -4317,8 +4335,8 @@
     },
     "Tome Of The Elements": {
       "category": "Equipment / Off Hand",
-      "ask": 3000000,
-      "bid": 2800000,
+      "ask": 2900000,
+      "bid": 2850000,
       "vendor": null
     },
     "Toughness": {
@@ -4354,7 +4372,7 @@
     "Turtle Shell Body": {
       "category": "Equipment / Body",
       "ask": 98000,
-      "bid": 84000,
+      "bid": 88000,
       "vendor": null
     },
     "Turtle Shell Legs": {
@@ -4425,7 +4443,7 @@
     },
     "Ultra Intelligence Coffee": {
       "category": "Consumables",
-      "ask": 8800,
+      "ask": 9200,
       "bid": 8600,
       "vendor": null
     },
@@ -4485,14 +4503,14 @@
     },
     "Umbral Chaps": {
       "category": "Equipment / Legs",
-      "ask": 560000,
+      "ask": 640000,
       "bid": 540000,
       "vendor": null
     },
     "Umbral Hide": {
       "category": "Resources",
       "ask": 240,
-      "bid": 235,
+      "bid": 230,
       "vendor": null
     },
     "Umbral Hood": {
@@ -4515,13 +4533,13 @@
     },
     "Vampire Fang": {
       "category": "Resources",
-      "ask": 560000,
-      "bid": 540000,
+      "ask": 540000,
+      "bid": 520000,
       "vendor": null
     },
     "Vampire Fang Dirk": {
       "category": "Equipment / Main Hand",
-      "ask": 12000000,
+      "ask": null,
       "bid": 10500000,
       "vendor": null
     },
@@ -4539,31 +4557,31 @@
     },
     "Verdant Alembic": {
       "category": "Tools / Alchemy",
-      "ask": 23000,
+      "ask": 22500,
       "bid": 17000,
       "vendor": null
     },
     "Verdant Boots": {
       "category": "Equipment / Feet",
       "ask": 16500,
-      "bid": 15500,
+      "bid": 15000,
       "vendor": null
     },
     "Verdant Brush": {
       "category": "Tools / Milking",
       "ask": 23000,
-      "bid": 19000,
+      "bid": 19500,
       "vendor": null
     },
     "Verdant Buckler": {
       "category": "Equipment / Off Hand",
-      "ask": 23500,
-      "bid": 18500,
+      "ask": 23000,
+      "bid": 19000,
       "vendor": null
     },
     "Verdant Bulwark": {
       "category": "Equipment / Two Hand",
-      "ask": 38000,
+      "ask": 37000,
       "bid": 25500,
       "vendor": null
     },
@@ -4587,20 +4605,20 @@
     },
     "Verdant Gauntlets": {
       "category": "Equipment / Hands",
-      "ask": 16500,
+      "ask": 16000,
       "bid": 15500,
       "vendor": null
     },
     "Verdant Hammer": {
       "category": "Tools / Cheesesmithing",
       "ask": 22500,
-      "bid": 21500,
+      "bid": 20000,
       "vendor": null
     },
     "Verdant Hatchet": {
       "category": "Tools / Woodcutting",
       "ask": 22500,
-      "bid": 16000,
+      "bid": 18000,
       "vendor": null
     },
     "Verdant Helmet": {
@@ -4618,7 +4636,7 @@
     "Verdant Milk": {
       "category": "Resources",
       "ask": 180,
-      "bid": 175,
+      "bid": 170,
       "vendor": null
     },
     "Verdant Needle": {
@@ -4629,7 +4647,7 @@
     },
     "Verdant Plate Body": {
       "category": "Equipment / Body",
-      "ask": 31000,
+      "ask": 30000,
       "bid": 29500,
       "vendor": null
     },
@@ -4641,26 +4659,26 @@
     },
     "Verdant Pot": {
       "category": "Tools / Brewing",
-      "ask": 23500,
+      "ask": 24000,
       "bid": 21000,
       "vendor": null
     },
     "Verdant Shears": {
       "category": "Tools / Foraging",
       "ask": 22500,
-      "bid": 16500,
+      "bid": 17000,
       "vendor": null
     },
     "Verdant Spatula": {
       "category": "Tools / Cooking",
-      "ask": 24000,
-      "bid": 23500,
+      "ask": 23500,
+      "bid": 19000,
       "vendor": null
     },
     "Verdant Spear": {
       "category": "Equipment / Main Hand",
       "ask": 25500,
-      "bid": 25000,
+      "bid": 24500,
       "vendor": null
     },
     "Verdant Sword": {
@@ -4671,8 +4689,8 @@
     },
     "Vision Helmet": {
       "category": "Equipment / Head",
-      "ask": 540000,
-      "bid": 520000,
+      "ask": 560000,
+      "bid": 540000,
       "vendor": null
     },
     "Vision Shield": {
@@ -4683,7 +4701,7 @@
     },
     "Watchful Relic": {
       "category": "Equipment / Off Hand",
-      "ask": 8000000,
+      "ask": 8400000,
       "bid": 7600000,
       "vendor": null
     },
@@ -4701,7 +4719,7 @@
     },
     "Werewolf Slasher": {
       "category": "Equipment / Main Hand",
-      "ask": 11500000,
+      "ask": null,
       "bid": 10500000,
       "vendor": null
     },
@@ -4720,7 +4738,7 @@
     "Wisdom Coffee": {
       "category": "Consumables",
       "ask": 2450,
-      "bid": 2400,
+      "bid": 2350,
       "vendor": null
     },
     "Wisdom Tea": {
@@ -4731,25 +4749,25 @@
     },
     "Wizard Necklace": {
       "category": "Jewelry",
-      "ask": 12500000,
+      "ask": 12000000,
       "bid": 11000000,
       "vendor": null
     },
     "Woodcutting Essence": {
       "category": "Resources",
-      "ask": 320,
-      "bid": 310,
+      "ask": 330,
+      "bid": 320,
       "vendor": null
     },
     "Woodcutting Tea": {
       "category": "Consumables",
-      "ask": 900,
-      "bid": 760,
+      "ask": 920,
+      "bid": 720,
       "vendor": null
     },
     "Wooden Bow": {
       "category": "Equipment / Two Hand",
-      "ask": 5000,
+      "ask": 5200,
       "bid": 4800,
       "vendor": null
     },
@@ -4773,7 +4791,7 @@
     },
     "Wooden Shield": {
       "category": "Equipment / Off Hand",
-      "ask": 5000,
+      "ask": 4700,
       "bid": 4400,
       "vendor": null
     },
@@ -4785,7 +4803,7 @@
     },
     "Yogurt": {
       "category": "Consumables",
-      "ask": 360,
+      "ask": 350,
       "bid": 210,
       "vendor": null
     }
